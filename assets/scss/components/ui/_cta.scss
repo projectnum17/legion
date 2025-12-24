@@ -1,0 +1,32 @@
+@use '../../base/media' as *;
+@use '../../base/mixins' as *;
+
+.cta {
+    font: 700 #{rem(16)} / 120% var(--ff-base);
+    text-transform: uppercase;
+    border-radius: rem(16);
+    padding: rem(22);
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    @include transitions(0.3s, ease-in);
+
+    &--accent {
+        color: var(--color-drk);
+        background: var(--color-accent);
+
+        @include hover {
+            background: var(--hover-accent);
+        }
+    }
+
+    &--grn {
+        color: var(--color-wht);
+        background: var(--color-grn);
+    }
+
+    &--violet {
+        color: var(--color-wht);
+        background: var(--color-violet);
+    }
+}

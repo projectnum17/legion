@@ -5,10 +5,262 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Legion | Home</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap"
+        rel="stylesheet">
+    <!-- styles -->
+    <link rel="stylesheet" href="./assets/css/main.min.css">
+
+    <!-- main scripts -->
+    <script defer src="./assets/scripts/main.js"></script>
 </head>
 
 <body>
-
+    <div class="mobile-menu js-mob-menu">
+        <button type="button" class="mobile-menu__close js-mob-close">
+            <svg width="32" height="32" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <rect x="0.000305176" y="2.83105" width="4" height="40" rx="2"
+                    transform="rotate(-45 0.000305176 2.83105)" fill="#FFD100" />
+                <rect x="2.82843" y="31.1123" width="4" height="40" rx="2" transform="rotate(-135 2.82843 31.1123)"
+                    fill="#FFD100" />
+            </svg>
+        </button>
+        <div class="container">
+            <div class="mobile-menu__head">
+                <div class="mobile-menu__location js-location-menu">
+                    Оберіть регіон: <span>Київ</span>
+                    <div class="mobile-menu__city">
+                        <ul>
+                            <li><a href="#!">Київ</a></li>
+                            <li><a href="#!">Дніпро</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            <nav class="mobile-menu__nav">
+                <ul class="mobile-menu__list">
+                    <li>
+                        <a href="#!" class="js-submenu-trigger">локації</a>
+                        <div class="mobile-menu__routes js-submenu">
+                            <ul class="mobile-menu__submenu">
+                                <li>
+                                    <a href="#!">
+                                        <span class="fw-text">ТРЦ Dream Berry, Оболонь</span>
+                                        <span class="lght-text">вул. Маршала Тимошенка, 21</span>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="#!">
+                                        <span class="fw-text">ТЦ Олімпійський, центр</span>
+                                        <span class="lght-text">вул. Велика Васильківська, 72</span>
+                                    </a>
+                                </li>
+                            </ul>
+                        </div>
+                    </li>
+                    <li>
+                        <a href="#!" class="js-submenu-trigger">меню</a>
+                        <div class="mobile-menu__routes js-submenu">
+                            <ul class="mobile-menu__submenu">
+                                <li>
+                                    <a href="#!">
+                                        <span class="fw-text">Київ</span>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="#!">
+                                        <span class="fw-text">Дніпро</span>
+                                    </a>
+                                </li>
+                            </ul>
+                        </div>
+                    </li>
+                    <li>
+                        <a href="#!" class="js-submenu-trigger">послуги</a>
+                        <div class="mobile-menu__routes js-submenu">
+                            <ul class="mobile-menu__submenu">
+                                <li>
+                                    <a href="#!">
+                                        <span class="fw-text">Дитячий День Народження</span>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="#!">
+                                        <span class="fw-text">Лазертаг</span>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="#!">
+                                        <span class="fw-text">Корпоратив</span>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="#!">
+                                        <span class="fw-text">Пейнбол</span>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="#!">
+                                        <span class="fw-text">Бункер</span>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="#!">
+                                        <span class="fw-text">Лабіринт</span>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="#!">
+                                        <span class="fw-text">Мафія</span>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="#!">
+                                        <span class="fw-text">Квадроцикли</span>
+                                    </a>
+                                </li>
+                            </ul>
+                        </div>
+                    </li>
+                    <li><a href="#!">про нас</a></li>
+                    <li><a href="#!">блог</a></li>
+                    <li><a href="#!">контакти</a></li>
+                </ul>
+            </nav>
+            <ul class="lang-switcher js-lang-menu">
+                <li class="lang-switcher__current">
+                    <span class="lang-switcher__label" lang="uk">UA</span>
+                    <ul class="lang-switcher__list">
+                        <li class="lang-switcher__item lang-switcher__item--active">
+                            <span class="lang-switcher__link" lang="uk">
+                                UA
+                            </span>
+                        </li>
+                        <li class="lang-switcher__item">
+                            <a class="lang-switcher__link" href="#!" lang="en">
+                                EN
+                            </a>
+                        </li>
+                    </ul>
+                </li>
+            </ul>
+            <div class="mobile-menu__contacts">
+                <div class="mobile-menu__phones">
+                    <a href="tel:+380673000000">+380 67 300 00 00</a>
+                    <a href="tel:+380673000000">+380 67 300 00 00</a>
+                </div>
+                <ul class="mobile-menu__message">
+                    <li>
+                        <a href="#!" target="_blank">
+                            <img width="40" height="40" src="./assets/images/icons/ico-telegram.svg" alt="Telegram">
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#!" target="_blank">
+                            <img width="40" height="40" src="./assets/images/icons/ico-viber.svg" alt="Viber">
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#!" target="_blank">
+                            <img width="40" height="40" src="./assets/images/icons/ico-wats.svg" alt="WatsUp">
+                        </a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </div>
+    <header class="header js-header">
+        <div class="container">
+            <div class="header__controls">
+                <a href="index.html" class="header__logo">
+                    <img width="70" height="56" src="./assets/images/icons/logo.png" alt="Logo">
+                </a>
+                <div class="header__panel">
+                    <button type="button" class="header__btn js-menu-trigger">
+                        <span>
+                            <img width="26" height="26" src="./assets/images/icons/ico-menu.svg" alt="Menu">
+                        </span>
+                        <span>меню</span>
+                    </button>
+                    <a href="tel:+000000000" class="header__phone">
+                        <img width="35" height="35" src="./assets/images/icons/ico-phone.svg" alt="Call">
+                    </a>
+                </div>
+            </div>
+        </div>
+    </header>
+    <main class="main">main</main>
+    <footer class="footer">
+        <div class="container">
+            <div class="footer__row">
+                <div class="footer__info">
+                    <div class="footer__logo">
+                        <img width="152" height="122" src="./assets/images/icons/logo.png" alt="Logo">
+                    </div>
+                    <p class="footer__copy">© 2025 <br> усі права захищені</p>
+                    <ul class="footer__social">
+                        <li>
+                            <a href="#!" target="_blank">
+                                <img width="40" height="40" src="./assets/images/icons/ico-facebook.svg" alt="Facebook">
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#!" target="_blank">
+                                <img width="40" height="40" src="./assets/images/icons/ico-inst.svg" alt="Instagram">
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#!" target="_blank">
+                                <img width="40" height="40" src="./assets/images/icons/ico-tube.svg" alt="YouTube">
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+                <nav class="footer__nav">
+                    <ul>
+                        <li><a href="#!">локації</a></li>
+                        <li><a href="#!">меню</a></li>
+                        <li><a href="#!">послуги</a></li>
+                        <li><a href="#!">про нас</a></li>
+                        <li><a href="#!">блог</a></li>
+                        <li><a href="#!">контакти</a></li>
+                    </ul>
+                </nav>
+            </div>
+            <div class="footer__row">
+                <form class="footer__send">
+                    <div class="footer__send-field">
+                        <label class="footer__send-title" for="footerEmail">
+                            Підпишіться на нові акції:
+                        </label>
+                        <input placeholder="Ваш email" type="email" name="footerEmail" id="footerEmail">
+                    </div>
+                    <button type="submit" class="footer__send-submit cta cta--accent">
+                        підписатися
+                    </button>
+                </form>
+                <div class="footer__contacts">
+                    <ul class="footer__phones">
+                        <li><a href="tel:+380994194111">+38 (099) 419 4111</a></li>
+                        <li><a href="tel:+380687884111">+38 (068) 788 4111</a></li>
+                    </ul>
+                    <ul class="footer__message">
+                        <li>
+                            <a href="#!" target="_blank">
+                                <img width="40" height="40" src="./assets/images/icons/ico-viber.svg" alt="Viber">
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#!" target="_blank">
+                                <img width="40" height="40" src="./assets/images/icons/ico-telegram.svg" alt="Telegram">
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </footer>
 </body>
 
 </html>

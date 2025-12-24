@@ -1,0 +1,71 @@
+@use 'media' as *;
+
+:root {
+    --ff-base: 'Montserrat', sans-serif;
+
+    --container-width: 1688px;
+    --container-padding: 16px;
+
+    --color-accent: #ffd100;
+    --color-wht: #fefefe;
+    --color-drk: #232323;
+    --color-violet: #5a289c;
+    --color-grn: #1ac500;
+    --bg-footer: #181818;
+
+    --hover-accent: #ffef47;
+
+    --intro-overlay: linear-gradient(
+        270deg,
+        rgba(35, 35, 35, 0.4) 50%,
+        rgba(35, 35, 35, 0.8) 66.1%
+    );
+
+    --section-pdd: 56px;
+}
+
+@include media('mobile-lg') {
+    :root {
+        --container-padding: 24px;
+        --section-pdd: 64px;
+    }
+}
+
+@include media('tablet') {
+    :root {
+        --container-padding: 44px;
+    }
+}
+
+@include media('laptop') {
+    :root {
+        --section-pdd: 72px;
+    }
+}
+
+@include media('desktop') {
+    :root {
+        --section-pdd: 88px;
+        --container-padding: 112px;
+    }
+}
+
+@include media('desktop-lg') {
+    :root {
+        --section-pdd: 96px;
+    }
+}
+
+// @media (min-width: 577px) {
+//     :root {
+//         --container-padding: 40px;
+//         --section-mb: 48px;
+//     }
+// }
+
+// @media (min-width: 992px) {
+//     :root {
+//         --container-padding: 80px;
+//         --section-mb: 80px;
+//     }
+// }
