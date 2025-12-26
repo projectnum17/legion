@@ -131,7 +131,10 @@
         a {
             width: 100%;
             height: 100%;
-            @include transitions(0.3s, ease-in);
+            @include transitions(
+                0.3s,
+                cubic-bezier(0.768, 0.304, 0.496, 0.884)
+            );
             @include hover {
                 transform: scale(1.05);
             }
@@ -164,7 +167,10 @@
 
                 a {
                     font: inherit;
-                    @include transitions(0.3s, ease-in);
+                    @include transitions(
+                        0.3s,
+                        cubic-bezier(0.768, 0.304, 0.496, 0.884)
+                    );
                     @include hover {
                         color: var(--color-accent);
                     }
@@ -235,7 +241,10 @@
             font: 400 #{rem(24)} / 140% var(--ff-base);
             a {
                 font: inherit;
-                @include transitions(0.3s, ease-in);
+                @include transitions(
+                    0.3s,
+                    cubic-bezier(0.768, 0.304, 0.496, 0.884)
+                );
                 @include hover {
                     color: var(--color-accent);
                 }
@@ -277,7 +286,10 @@
         a {
             width: 100%;
             height: 100%;
-            @include transitions(0.3s, ease-in);
+            @include transitions(
+                0.3s,
+                cubic-bezier(0.768, 0.304, 0.496, 0.884)
+            );
             @include hover {
                 transform: scale(1.05);
             }

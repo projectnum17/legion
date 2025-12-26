@@ -1,7 +1,5 @@
 // global scripts
 
-// === header scrolled
-
 const headerHandler = () => {
     const header = document.querySelector('.js-header');
     if (!header) return;
@@ -83,27 +81,50 @@ const subMenuHandler = () => {
 };
 
 const locationHandler = () => {
-    const locationMenu = document.querySelector('.js-location-menu');
-    if (!locationMenu) return;
+    const locationMenus = document.querySelectorAll('.js-location-menu');
 
-    const cityMenu = locationMenu.querySelector('.mobile-menu__city');
-    const currentCity = locationMenu.querySelector('span');
+    locationMenus.forEach((locationMenu) => {
+        const cityMenu = locationMenu.querySelector('div');
+        const currentCity = locationMenu.querySelector('span');
 
-    if (!cityMenu || !currentCity) return;
+        if (!cityMenu || !currentCity) return;
 
-    locationMenu.addEventListener('click', (e) => {
-        if (!e.target.closest('span')) return;
-        cityMenu.classList.toggle('is-show');
+        const isMobile = () => window.innerWidth < 768;
+
+        locationMenu.addEventListener('mouseenter', () => {
+            if (!isMobile()) cityMenu.classList.add('is-show');
+        });
+
+        locationMenu.addEventListener('mouseleave', () => {
+            if (!isMobile()) cityMenu.classList.remove('is-show');
+        });
+
+        locationMenu.addEventListener('click', (e) => {
+            e.stopPropagation();
+
+            const link = e.target.closest('a');
+            if (link) {
+                e.preventDefault();
+                currentCity.textContent = link.textContent.trim();
+                cityMenu.classList.remove('is-show');
+                return;
+            }
+
+            if (isMobile()) {
+                if (!cityMenu.contains(e.target)) {
+                    cityMenu.classList.toggle('is-show');
+                }
+            }
+        });
     });
 
-    cityMenu.addEventListener('click', (e) => {
-        const link = e.target.closest('a');
-        if (!link) return;
-
-        e.preventDefault();
-
-        currentCity.textContent = link.textContent.trim();
-        cityMenu.classList.remove('is-show');
+    document.addEventListener('click', () => {
+        locationMenus.forEach((menu) => {
+            const cityMenu = menu.querySelector('div');
+            if (cityMenu.classList.contains('is-show')) {
+                cityMenu.classList.remove('is-show');
+            }
+        });
     });
 };
 
@@ -120,8 +141,95 @@ const langHandler = () => {
     });
 };
 
-headerHandler();
-mobileMenuHandler();
-subMenuHandler();
-langHandler();
-locationHandler();
+const moveLang = () => {
+    const langMenu = document.querySelector('.js-lang-menu');
+    const langPortal = document.querySelector('.js-lang-portal');
+
+    const container = document.querySelector('.container');
+    const nav = container.querySelector('.mobile-menu__nav');
+    const contacts = container.querySelector('.mobile-menu__contacts');
+
+    function handleLangMenu() {
+        if (window.innerWidth >= 480) {
+            if (langMenu.parentNode !== langPortal) {
+                langPortal.appendChild(langMenu);
+            }
+        } else {
+            if (langMenu.parentNode !== container) {
+                container.insertBefore(langMenu, contacts);
+            }
+        }
+    }
+
+    handleLangMenu();
+    window.addEventListener('resize', handleLangMenu);
+};
+
+const modalFormHandler = () => {
+    const modalTrigger = document.querySelectorAll('.js-modal-trigger'),
+        modalBox = document.querySelector('.js-form-modal');
+
+    if (!modalTrigger || !modalBox) return;
+
+    const successWindow = modalBox.querySelector('.js-form-success'),
+        formWindow = modalBox.querySelector('.js-form-box'),
+        formData = modalBox.querySelector('form');
+
+    successWindow.classList.add('is-hide');
+
+    if (!successWindow || !formWindow || !formData) return;
+
+    const closeSuccess = successWindow.querySelector('.js-success-close'),
+        closeForm = modalBox.querySelector('.js-form-close');
+
+    if (!closeSuccess || !closeForm) return;
+
+    const closeModal = () => {
+        modalBox.classList.remove('is-show');
+        const form = modalBox.querySelector('form');
+        form.reset();
+        formWindow.classList.remove('is-hide');
+        document.body.classList.remove('is-locked');
+    };
+
+    const openModal = () => {
+        modalBox.classList.add('is-show');
+        successWindow.classList.add('is-hide');
+        formWindow.classList.remove('is-hide');
+        document.body.classList.add('is-locked');
+    };
+
+    modalTrigger.forEach((btn) => btn.addEventListener('click', openModal));
+
+    closeForm.addEventListener('click', closeModal);
+    closeSuccess.addEventListener('click', closeModal);
+
+    document.addEventListener('keydown', (e) => {
+        if (e.key === 'Escape' && modalBox.classList.contains('is-show')) {
+            closeModal();
+        }
+    });
+
+    modalBox.addEventListener('click', (e) => {
+        const inner = modalBox.querySelector('.js-form-inner');
+        if (e.target === modalBox || e.target === inner) {
+            closeModal();
+        }
+    });
+
+    formData.addEventListener('submit', (e) => {
+        e.preventDefault();
+        successWindow.classList.remove('is-hide');
+        formWindow.classList.add('is-hide');
+    });
+};
+document.addEventListener('DOMContentLoaded', () => {
+    headerHandler();
+    langHandler();
+    mobileMenuHandler();
+    subMenuHandler();
+    locationHandler();
+    modalFormHandler();
+
+    moveLang();
+});

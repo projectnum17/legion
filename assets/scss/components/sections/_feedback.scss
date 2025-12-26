@@ -1,0 +1,80 @@
+@use '../../base/media' as *;
+@use '../../base/mixins' as *;
+
+.feedback {
+    padding-block: rem(280) rem(0);
+    position: relative;
+    background: var(--color-accent);
+    box-shadow: 10px 10px 20px 0px #0000001a;
+
+    .container {
+        padding: 0;
+    }
+
+    &__content {
+        position: relative;
+        z-index: 2;
+    }
+
+    &__title {
+        font: 800 #{rem(26)} / 100% var(--ff-base);
+        text-align: center;
+        text-transform: uppercase;
+        margin-bottom: rem(6);
+        padding-inline: var(--container-padding);
+    }
+
+    &__subtitle {
+        font: 400 #{rem(16)} / 140% var(--ff-base);
+        font-style: italic;
+        text-align: center;
+        margin-bottom: rem(21);
+        padding-inline: var(--container-padding);
+    }
+
+    &__panel {
+        padding: rem(40) rem(16);
+        background: var(--color-drk);
+    }
+
+    &__form {
+        display: flex;
+        flex-direction: column;
+        gap: rem(24);
+
+        input {
+            font: 600 #{rem(20)} / 120% var(--ff-base);
+            text-transform: uppercase;
+            width: 100%;
+            outline: none;
+            border-radius: rem(8);
+            padding: rem(20) rem(32);
+            border: none;
+            background: var(--color-wht);
+
+            &::placeholder {
+                color: inherit;
+            }
+        }
+    }
+
+    .decoration-wrapper {
+        position: absolute;
+        z-index: -1;
+        left: 61px;
+        transform: translateY(-20%);
+        top: 0;
+        pointer-events: none;
+    }
+
+    .decoration-chev {
+        max-width: rem(198);
+
+        &.frst-el {
+        }
+
+        &.scnd-el {
+            display: none;
+        }
+    }
+}

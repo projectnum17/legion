@@ -1,0 +1,34 @@
+@use '../../base/media' as *;
+@use '../../base/mixins' as *;
+
+.contacts {
+    padding-block: rem(48);
+    background: var(--color-accent);
+
+    &__title {
+        font: 800 #{rem(26)} / 100% var(--ff-base);
+        text-transform: uppercase;
+        text-align: center;
+        font-style: italic;
+        margin-bottom: rem(28);
+
+        &.mobile--hidden {
+            display: none;
+        }
+    }
+
+    &__slider {
+        min-width: 0;
+        width: 100%;
+        margin-bottom: rem(32);
+
+        &-slide {
+            height: auto;
+        }
+    }
+
+    &__wrapper {
+        display: flex;
+        flex-direction: column-reverse;
+    }
+}

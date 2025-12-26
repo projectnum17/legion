@@ -1,0 +1,48 @@
+@use '../../base/media' as *;
+@use '../../base/mixins' as *;
+
+.choosing {
+    padding-block: rem(48);
+    background: var(--color-accent);
+
+    &__title {
+        font: 800 #{rem(26)} / 100% var(--ff-base);
+        text-align: center;
+        text-transform: uppercase;
+        margin-bottom: rem(24);
+    }
+
+    &__cards {
+        display: grid;
+        grid-template-columns: repeat(1, 1fr);
+        gap: rem(24);
+    }
+
+    &__card {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+    }
+
+    &__img {
+        width: rem(152);
+        height: rem(152);
+        margin-bottom: rem(16);
+
+        img {
+            width: 100%;
+            height: 100%;
+            object-fit: contain;
+        }
+    }
+
+    &__event {
+        font: 700 #{rem(20)} / 120% var(--ff-base);
+        margin-bottom: rem(8);
+    }
+
+    &__text {
+        font: 400 #{rem(16)} / 140% var(--ff-base);
+    }
+}

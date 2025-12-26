@@ -1,4 +1,5 @@
 @use 'media' as *;
+@use 'mixins' as *;
 
 :root {
     --ff-base: 'Montserrat', sans-serif;
@@ -21,13 +22,13 @@
         rgba(35, 35, 35, 0.8) 66.1%
     );
 
-    --section-pdd: 56px;
+    --section-pdd: #{rem(56)};
 }
 
 @include media('mobile-lg') {
     :root {
         --container-padding: 24px;
-        --section-pdd: 64px;
+        --section-pdd: #{rem(64)};
     }
 }
 
@@ -39,20 +40,20 @@
 
 @include media('laptop') {
     :root {
-        --section-pdd: 72px;
+        --section-pdd: #{rem(72)};
     }
 }
 
 @include media('desktop') {
     :root {
-        --section-pdd: 88px;
+        --section-pdd: #{rem(88)};
         --container-padding: 112px;
     }
 }
 
 @include media('desktop-lg') {
     :root {
-        --section-pdd: 96px;
+        --section-pdd: #{rem(96)};
     }
 }
 

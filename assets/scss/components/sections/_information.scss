@@ -1,0 +1,39 @@
+@use '../../base/media' as *;
+@use '../../base/mixins' as *;
+
+.information {
+    padding-block: var(--section-pdd);
+    position: relative;
+
+    .container {
+        padding: 0;
+    }
+
+    &__reviews {
+        position: relative;
+        z-index: 2;
+        margin-bottom: rem(-300);
+        padding-inline: var(--container-padding);
+        overflow: hidden;
+    }
+
+    &__videos {
+        padding-inline: var(--container-padding);
+        margin-bottom: rem(56);
+    }
+
+    .decoration-chev {
+        position: absolute;
+        max-width: 197px;
+
+        &.frst-el {
+            top: 16px;
+            left: 16px;
+        }
+
+        &.scnd-el {
+            left: 61px;
+            top: 300px;
+        }
+    }
+}

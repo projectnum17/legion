@@ -1,0 +1,59 @@
+@use '../../base/media' as *;
+@use '../../base/mixins' as *;
+
+.packages {
+    position: relative;
+    overflow: hidden;
+    padding-block: rem(48);
+
+    &::after {
+        content: '';
+        position: absolute;
+        inset: 0;
+        height: 100%;
+        pointer-events: none;
+        background: #ffffff4d;
+    }
+
+    .container {
+        position: relative;
+        z-index: 3;
+    }
+
+    &--light {
+        .packages__bg {
+            display: block;
+            position: absolute;
+            inset: 0;
+            object-fit: cover;
+            pointer-events: none;
+            height: 100%;
+        }
+    }
+
+    &__bg {
+        display: none;
+    }
+
+    &__title {
+        font: 800 #{rem(26)} / 100% var(--ff-base);
+        text-align: center;
+        text-transform: uppercase;
+        margin-bottom: rem(28);
+    }
+
+    &__cards {
+        display: grid;
+        grid-template-columns: repeat(1, 1fr);
+        gap: rem(32);
+    }
+
+    .decoration-chev {
+        max-width: 296px;
+        position: absolute;
+        top: 32px;
+        right: -30px;
+        z-index: 2;
+        pointer-events: none;
+    }
+}

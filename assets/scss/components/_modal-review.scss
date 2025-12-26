@@ -1,0 +1,105 @@
+@use '../base/media' as *;
+@use '../base/mixins' as *;
+
+.review-modal {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    position: fixed;
+    width: 100%;
+    height: 100vh;
+    height: 100svh;
+    opacity: 0;
+    visibility: hidden;
+    pointer-events: none;
+    z-index: 5;
+    background: rgba(0, 0, 0, 0.8);
+    backdrop-filter: blur(10px);
+    transition: all 0.5s cubic-bezier(0.66, 0, 0.355, 0.861);
+
+    &.is-show {
+        opacity: 1;
+        visibility: visible;
+        pointer-events: all;
+
+        .review-modal__content {
+            transform: translateY(0%);
+        }
+    }
+
+    &__inner {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        height: 100%;
+        padding: rem(12);
+    }
+
+    &__close {
+        position: absolute;
+        top: 16px;
+        right: 16px;
+        width: rem(24);
+        height: rem(24);
+        color: var(--color-drk);
+
+        svg {
+            width: 100%;
+            height: 100%;
+        }
+    }
+
+    &__content {
+        overflow: auto;
+        max-height: 95%;
+        transform: translateY(-20%);
+        padding: rem(20) rem(12);
+        position: relative;
+        border-radius: rem(16);
+        backdrop-filter: blur(20px);
+        border: 1px solid var(--color-drk);
+        background: var(--color-wht);
+        transition: all 0.5s cubic-bezier(0.66, 0, 0.355, 0.861);
+    }
+
+    &__head {
+        display: flex;
+        align-items: center;
+        gap: rem(21);
+        margin-bottom: rem(37);
+    }
+
+    &__user {
+        display: flex;
+        flex-shrink: 0;
+        width: rem(64);
+        height: rem(64);
+        border-radius: 50%;
+        overflow: hidden;
+
+        img {
+            width: 100%;
+            height: 100%;
+        }
+    }
+
+    &__name {
+        font: 700 #{rem(16)} / 140% var(--ff-base);
+        margin-bottom: rem(8);
+    }
+
+    &__rating {
+        display: flex;
+        align-items: center;
+        gap: rem(8);
+
+        img {
+            width: rem(24);
+            height: rem(24);
+        }
+    }
+
+    &__body {
+        font: 400 #{rem(16)} / 140% var(--ff-base);
+    }
+}

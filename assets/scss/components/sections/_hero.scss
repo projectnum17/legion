@@ -1,0 +1,177 @@
+@use '../../base/media' as *;
+@use '../../base/mixins' as *;
+
+.hero {
+    min-height: 100vh;
+    min-height: 100svh;
+    position: relative;
+
+    &::after {
+        content: '';
+        inset: 0;
+        position: absolute;
+        background: linear-gradient(
+            270deg,
+            rgba(35, 35, 35, 0.35) 0%,
+            rgba(35, 35, 35, 0.7) 79.36%
+        );
+    }
+
+    .container {
+        position: relative;
+        z-index: 3;
+    }
+
+    &__bg {
+        position: absolute;
+        inset: 0;
+        object-fit: cover;
+        height: 100%;
+    }
+
+    &__content {
+        padding-block: rem(128) rem(37);
+        display: flex;
+        flex-direction: column;
+        gap: rem(24);
+    }
+
+    &__btns {
+        display: flex;
+        flex-direction: column;
+        gap: rem(16);
+    }
+
+    &__panel {
+        display: flex;
+        flex-direction: column;
+        gap: rem(58);
+    }
+
+    &__title {
+        font: 800 #{rem(28)} / 120% var(--ff-base);
+        text-transform: uppercase;
+        text-shadow: 5px 5px 4px rgba(0, 0, 0, 0.6);
+        color: var(--color-wht);
+
+        span {
+            color: var(--color-accent);
+            text-shadow: 5px 5px 4px rgba(0, 0, 0, 0.6);
+        }
+    }
+
+    &__description {
+        font: 400 #{rem(16)} / 140% var(--ff-base);
+        color: var(--color-wht);
+    }
+
+    &__benefits {
+        display: flex;
+        flex-direction: column;
+
+        &-box {
+            display: flex;
+            flex-direction: column;
+            max-width: rem(208);
+            width: 100%;
+            padding: rem(20) rem(14);
+            padding-top: rem(62);
+            border-radius: rem(16);
+            position: relative;
+            background: #232323cc;
+            backdrop-filter: blur(20px);
+
+            &:last-child {
+                align-self: flex-end;
+                margin-top: rem(-30);
+                .hero__benefits-title {
+                    order: 2;
+                    margin-bottom: rem(6);
+                }
+
+                .hero__benefits-descr {
+                    order: 1;
+                    margin-bottom: rem(6);
+                }
+
+                .hero__benefits-reminder {
+                    order: 3;
+                }
+            }
+
+            &::before {
+                content: '';
+                position: absolute;
+                top: 0;
+                left: 0;
+                width: 100%;
+                height: 100%;
+                padding: 1px;
+                border-radius: rem(16);
+                background: linear-gradient(
+                    90deg,
+                    rgba(255, 209, 0, 0.5) 0%,
+                    rgba(255, 209, 0, 0.15) 100%
+                );
+                -webkit-mask: linear-gradient(#fff 0 0) content-box,
+                    linear-gradient(#fff 0 0);
+                -webkit-mask-composite: xor;
+
+                mask: linear-gradient(#fff 0 0) content-box,
+                    linear-gradient(#fff 0 0);
+                mask-composite: exclude;
+                pointer-events: none;
+            }
+
+            &.box-smaller {
+                padding-top: rem(49);
+                .hero__benefits-title {
+                    font-size: rem(16);
+                }
+
+                img {
+                    width: rem(115);
+                    height: rem(111);
+                    right: 0;
+                }
+            }
+
+            img {
+                transform: translateY(-40%);
+                position: absolute;
+                right: 11px;
+                top: 0;
+                width: rem(134);
+                height: rem(124);
+                object-fit: contain;
+            }
+        }
+
+        &-title {
+            font: 800 #{rem(36)} / 100% var(--ff-base);
+            text-transform: uppercase;
+            position: relative;
+            z-index: 2;
+            font-style: italic;
+            display: inline-flex;
+            margin-bottom: rem(4);
+            color: var(--color-accent);
+        }
+
+        &-descr {
+            font: 700 #{rem(16)} / 100% var(--ff-base);
+            font-style: italic;
+            position: relative;
+            z-index: 2;
+            color: var(--color-wht);
+        }
+
+        &-reminder {
+            max-width: rem(163);
+            position: relative;
+            z-index: 2;
+            font: 400 #{rem(14)} / 140% var(--ff-base);
+            color: var(--color-wht);
+        }
+    }
+}

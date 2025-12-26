@@ -1,0 +1,141 @@
+@use '../base/media' as *;
+@use '../base/mixins' as *;
+
+.reviews-slider {
+    overflow: visible;
+    &__wrapper {
+        margin-bottom: rem(82);
+    }
+
+    &__slide {
+        height: auto;
+    }
+}
+
+.reviews-panel {
+    .slider-controls {
+        &__btn {
+            border: 1px solid var(--color-drk);
+            color: var(--color-drk);
+            background: var(--color-wht);
+        }
+
+        &__pagination {
+            .swiper-pagination-current {
+                color: var(--color-drk);
+            }
+        }
+    }
+}
+
+.reviews-box {
+    padding: rem(32) rem(16) rem(32) rem(16);
+    position: relative;
+    border-radius: rem(25);
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    box-shadow: 10px 10px 20px 0px #0000001a;
+
+    &::after {
+        content: '';
+        position: absolute;
+        bottom: 5px;
+        left: 50%;
+        width: 50px;
+        height: 50px;
+        clip-path: path('M 0 0 Q 0 25 40 50 Q 30 30 40 0 Z');
+        transform: translate(-50%, 100%);
+        box-shadow: 10px 10px 20px 0px #0000001a;
+    }
+
+    &--yellow {
+        background: #ffebbb;
+
+        &::after {
+            background: #ffebbb;
+        }
+    }
+    &--green {
+        background: #e1f9e1;
+
+        &::after {
+            background: #e1f9e1;
+        }
+    }
+    &--pink {
+        background: #f9e1e8;
+
+        &::after {
+            background: #f9e1e8;
+        }
+    }
+    &--blue {
+        background: #e1f1f9;
+
+        &::after {
+            background: #e1f1f9;
+        }
+    }
+
+    &__head {
+        display: flex;
+        align-items: flex-start;
+        gap: rem(21);
+        margin-bottom: rem(16);
+    }
+
+    &__user {
+        width: rem(64);
+        height: rem(64);
+        border-radius: 50%;
+        overflow: hidden;
+        display: inline-flex;
+        flex-shrink: 0;
+
+        img {
+            width: 100%;
+            height: 100%;
+        }
+    }
+
+    &__info {
+        display: flex;
+        flex-direction: column;
+        gap: rem(5);
+    }
+
+    &__name {
+        font: 700 #{rem(16)} / 140% var(--ff-base);
+    }
+
+    &__rating {
+        display: flex;
+        align-items: center;
+        gap: rem(8);
+
+        img {
+            width: rem(24);
+            height: rem(24);
+        }
+    }
+
+    &__desr {
+        display: flex;
+        flex-direction: column;
+        gap: rem(16);
+        flex: 1;
+    }
+
+    &__text {
+        font: 400 #{rem(16)} / 140% var(--ff-base);
+    }
+
+    &__btn {
+        font: 400 #{rem(16)} / 140% var(--ff-base);
+        margin-left: auto;
+        padding-bottom: rem(4);
+        margin-top: auto;
+        border-bottom: 1px solid var(--color-drk);
+    }
+}
