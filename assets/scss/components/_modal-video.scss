@@ -12,7 +12,7 @@
     opacity: 0;
     visibility: hidden;
     pointer-events: none;
-    z-index: 5;
+    z-index: 100;
     background: rgba(0, 0, 0, 0.8);
     backdrop-filter: blur(10px);
     transition: all 0.5s cubic-bezier(0.66, 0, 0.355, 0.861);

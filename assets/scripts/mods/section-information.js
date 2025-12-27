@@ -109,14 +109,30 @@ document.addEventListener('DOMContentLoaded', () => {
         videoBoxes.forEach((box) => {
             box.addEventListener('click', () => {
                 const videoSrc = box.getAttribute('data-video');
-                if (videoSrc) {
-                    videoPlayer.src = videoSrc;
-                    modal.classList.add('is-show');
-                    document.body.classList.add('is-locked');
-                    videoPlayer.pause();
-                    videoPlayer.removeAttribute('controls');
-                    playBtn.classList.remove('is-hide');
+                const posterImg = box.querySelector('img');
+                const posterSrc = posterImg
+                    ? posterImg.getAttribute('src')
+                    : '';
+
+                if (!videoSrc) return;
+
+                videoPlayer.src = videoSrc;
+
+                if (posterSrc) {
+                    videoPlayer.poster = posterSrc;
+                } else {
+                    videoPlayer.removeAttribute('poster');
                 }
+
+                modal.classList.add('is-show');
+                document.body.classList.add('is-locked');
+
+                videoPlayer.pause();
+                videoPlayer.currentTime = 0;
+                videoPlayer.removeAttribute('controls');
+
+                playBtn.classList.remove('is-hide');
+                wrapper.classList.remove('play');
             });
         });
 
