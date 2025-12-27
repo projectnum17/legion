@@ -30,6 +30,8 @@ const headerHandler = () => {
 };
 
 const mobileMenuHandler = () => {
+    const langBox = document.querySelector('.lang-switcher__list');
+
     const menuBox = document.querySelector('.js-mob-menu');
     const menuTrigger = document.querySelector('.js-menu-trigger');
     const menuClose = document.querySelector('.js-mob-close');
@@ -42,6 +44,9 @@ const mobileMenuHandler = () => {
     const closeMenu = () => {
         menuBox.classList.remove('is-show');
         document.body.classList.remove('is-locked');
+        if (langBox.classList.contains('is-show')) {
+            langBox.classList.remove('is-show');
+        }
     };
 
     if (menuBox && menuTrigger && menuClose) {
@@ -129,15 +134,36 @@ const locationHandler = () => {
 };
 
 const langHandler = () => {
-    const langMenu = document.querySelector('.js-lang-menu');
-    if (!langMenu) return;
+    const langMenus = document.querySelectorAll('.js-lang-menu');
+    if (!langMenus.length) return;
 
-    const current = langMenu.querySelector('.lang-switcher__label');
-    const list = langMenu.querySelector('.lang-switcher__list');
-    if (!current || !list) return;
+    const isMobile = () => window.innerWidth < 1024;
 
-    current.addEventListener('click', () => {
-        list.classList.toggle('is-show');
+    langMenus.forEach((langMenu) => {
+        const current = langMenu.querySelector('.lang-switcher__label');
+        const list = langMenu.querySelector('.lang-switcher__list');
+        if (!current || !list) return;
+
+        current.addEventListener('click', (e) => {
+            e.stopPropagation();
+            list.classList.toggle('is-show');
+        });
+
+        langMenu.addEventListener('mouseenter', () => {
+            if (!isMobile()) list.classList.add('is-show');
+        });
+        langMenu.addEventListener('mouseleave', () => {
+            if (!isMobile()) list.classList.remove('is-show');
+        });
+    });
+
+    document.addEventListener('click', () => {
+        langMenus.forEach((langMenu) => {
+            const list = langMenu.querySelector('.lang-switcher__list');
+            if (list && list.classList.contains('is-show')) {
+                list.classList.remove('is-show');
+            }
+        });
     });
 };
 
@@ -163,6 +189,60 @@ const moveLang = () => {
 
     handleLangMenu();
     window.addEventListener('resize', handleLangMenu);
+};
+
+const headerBotMover = () => {
+    const container = document.querySelector('.js-laptop-container');
+    const headerInner = document.querySelector('.header__inner');
+    const headerBot = document.querySelector('.header__bot');
+    const headerNav = document.querySelector('.header__nav');
+
+    if (!container || !headerInner || !headerBot || !headerNav) return;
+
+    const moveHeaderBot = () => {
+        const width = window.innerWidth;
+        let menuPanel = document.querySelector('.menu-panel');
+
+        // === 1440+ ===
+        if (width >= 1440) {
+            if (!menuPanel) {
+                menuPanel = document.createElement('div');
+                menuPanel.className = 'menu-panel';
+                headerInner.parentNode.insertBefore(
+                    menuPanel,
+                    headerInner.nextSibling
+                );
+            }
+
+            if (headerBot.parentNode !== menuPanel) {
+                menuPanel.appendChild(headerBot);
+            }
+
+            if (headerNav.parentNode !== menuPanel) {
+                menuPanel.appendChild(headerNav);
+            }
+
+            return;
+        }
+
+        // === < 1440 ===
+        if (menuPanel) {
+            menuPanel.remove();
+        }
+
+        if (width > 1023) {
+            if (headerBot.parentNode !== headerInner) {
+                headerInner.appendChild(headerBot);
+            }
+        } else {
+            if (headerBot.parentNode !== container) {
+                container.appendChild(headerBot);
+            }
+        }
+    };
+
+    moveHeaderBot();
+    window.addEventListener('resize', moveHeaderBot);
 };
 
 const modalFormHandler = () => {
@@ -223,13 +303,52 @@ const modalFormHandler = () => {
         formWindow.classList.add('is-hide');
     });
 };
+
+const wrapMenuItems = () => {
+    const menu = document.querySelector('.header__menu');
+    if (!menu) return;
+
+    const width = window.innerWidth;
+    const GROUP_CLASS = 'menu-group';
+
+    const unwrap = () => {
+        const groups = menu.querySelectorAll(`.${GROUP_CLASS}`);
+        groups.forEach((group) => {
+            while (group.firstChild) {
+                menu.appendChild(group.firstChild);
+            }
+            group.remove();
+        });
+    };
+
+    if (width < 1920) {
+        unwrap();
+        return;
+    }
+
+    if (menu.querySelector(`.${GROUP_CLASS}`)) return;
+
+    const items = Array.from(menu.children).filter((el) => el.tagName === 'LI');
+
+    for (let i = 0; i < items.length; i += 3) {
+        const wrapper = document.createElement('div');
+        wrapper.className = GROUP_CLASS;
+
+        items.slice(i, i + 3).forEach((li) => wrapper.appendChild(li));
+        menu.appendChild(wrapper);
+    }
+};
+
+window.addEventListener('resize', wrapMenuItems);
+
 document.addEventListener('DOMContentLoaded', () => {
+    headerBotMover();
     headerHandler();
     langHandler();
     mobileMenuHandler();
     subMenuHandler();
     locationHandler();
     modalFormHandler();
-
+    wrapMenuItems();
     moveLang();
 });

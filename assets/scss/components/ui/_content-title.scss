@@ -1,0 +1,21 @@
+@use '../../base/media' as *;
+@use '../../base/mixins' as *;
+
+.content-title {
+    font: 800 #{rem(26)} / 100% var(--ff-base);
+    text-transform: uppercase;
+    font-style: italic;
+
+    @include media('mobile-lg') {
+        font-size: rem(36);
+    }
+    @include media('laptop') {
+        font-size: rem(40);
+    }
+    @include media('desktop') {
+        font-size: rem(48);
+    }
+    @include media('desktop-lg') {
+        font-size: rem(64);
+    }
+}

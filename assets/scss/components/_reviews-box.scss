@@ -3,6 +3,8 @@
 
 .reviews-slider {
     overflow: visible;
+    width: 100%;
+    min-width: 0;
     &__wrapper {
         margin-bottom: rem(82);
     }
@@ -18,11 +20,20 @@
             border: 1px solid var(--color-drk);
             color: var(--color-drk);
             background: var(--color-wht);
+
+            @include media('tablet') {
+                border: 1px solid var(--color-accent);
+                color: var(--color-accent);
+                background: var(--color-drk);
+            }
         }
 
         &__pagination {
             .swiper-pagination-current {
                 color: var(--color-drk);
+                @include media('tablet') {
+                    color: var(--color-accent);
+                }
             }
         }
     }

@@ -1,0 +1,139 @@
+@use '../base/media' as *;
+@use '../base/mixins' as *;
+
+.gallery-content {
+    padding-bottom: rem(64);
+    .slider-controls {
+        padding-top: rem(32);
+
+        @include media('tablet') {
+            padding-top: 0;
+        }
+
+        &.mobile--hidden {
+            display: none;
+            @include media('tablet') {
+                display: flex;
+            }
+        }
+
+        &.mobile--visible {
+            @include media('tablet') {
+                display: none;
+            }
+        }
+    }
+
+    &__slider {
+        width: 100%;
+        min-width: 0;
+    }
+
+    &__panel {
+        @include media('tablet') {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: rem(20);
+        }
+    }
+
+    &__title {
+        text-align: center;
+        margin-bottom: rem(24);
+        color: #fff;
+
+        &.mobile--visible {
+            @include media('tablet') {
+                display: none;
+            }
+        }
+
+        &.mobile--hidden {
+            display: none;
+
+            @include media('tablet') {
+                display: block;
+                margin-bottom: 0;
+                text-align: left;
+            }
+        }
+    }
+
+    &__inner {
+        display: flex;
+        flex-direction: column-reverse;
+
+        @include media('tablet') {
+            flex-direction: column;
+            gap: rem(48);
+        }
+    }
+
+    .row {
+        display: flex;
+        gap: rem(12);
+
+        a {
+            flex: 1;
+        }
+
+        &--sm {
+            height: rem(250);
+
+            .gallery-box {
+                height: 100%;
+            }
+        }
+
+        &--lg {
+            height: rem(420);
+
+            .gallery-box {
+                height: 100%;
+            }
+        }
+    }
+}
+
+.gallery-box {
+    height: rem(320);
+    border-radius: rem(8);
+    overflow: hidden;
+
+    @include media('mobile-lg') {
+        height: rem(270);
+    }
+
+    img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+    }
+}
+
+.js-gallery-slider {
+    display: none;
+    @include media('tablet') {
+        display: block;
+        .gallery-content__slide {
+            display: flex;
+            flex-direction: column;
+            gap: rem(12);
+        }
+    }
+
+    &-mob {
+        @include media('tablet') {
+            display: none;
+        }
+    }
+}
+
+.f-panzoom__viewport {
+    border-radius: rem(8);
+    overflow: hidden;
+}
+.fancybox__slide {
+    padding-inline: rem(20);
+}

@@ -4,6 +4,10 @@
 .videos-content {
     .slider-controls {
         padding-top: rem(32);
+
+        @include media('tablet') {
+            padding-top: 0;
+        }
     }
 
     &__slider {
@@ -11,21 +15,45 @@
         min-width: 0;
     }
 
+    &__panel {
+        @include media('tablet') {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: rem(20);
+        }
+    }
+
     &__title {
-        font: 800 #{rem(26)} / 100% var(--ff-base);
-        text-transform: uppercase;
         text-align: center;
         margin-bottom: rem(24);
         color: #fff;
 
+        &.mobile--visible {
+            @include media('tablet') {
+                display: none;
+            }
+        }
+
         &.mobile--hidden {
             display: none;
+
+            @include media('tablet') {
+                display: block;
+                margin-bottom: 0;
+                text-align: left;
+            }
         }
     }
 
     &__inner {
         display: flex;
         flex-direction: column-reverse;
+
+        @include media('tablet') {
+            flex-direction: column;
+            gap: rem(48);
+        }
     }
 }
 
@@ -33,6 +61,7 @@
     border-radius: rem(16);
     position: relative;
     overflow: hidden;
+    cursor: pointer;
 
     &::before {
         content: '';

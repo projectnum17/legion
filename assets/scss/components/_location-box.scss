@@ -13,15 +13,59 @@
     // box-shadow: 10px 10px 20px 0px #00000033;
     background: #232323cc;
 
+    @include media('mobile-lg') {
+        padding: rem(39) rem(47);
+    }
+
+    @include media('tablet') {
+        padding: rem(31);
+        border-radius: rem(16);
+    }
+
+    @include media('laptop') {
+        border-radius: rem(32);
+        padding: rem(39) rem(47);
+    }
+
     &--contacts {
         padding: rem(23) rem(15);
         background: var(--color-drk);
+
+        @include media('mobile-lg') {
+            padding: rem(39) rem(47);
+        }
+
+        @include media('tablet') {
+            padding: rem(49) rem(31);
+        }
+
+        @include media('laptop') {
+            padding: rem(40) rem(47);
+        }
+
+        @include media('desktop') {
+            padding: rem(39) rem(40);
+        }
+
+        .location-box__title {
+            @include media('mobile-lg') {
+                margin-bottom: rem(42);
+            }
+
+            @include media('tablet') {
+                font-weight: 600;
+                margin-bottom: rem(8);
+            }
+        }
 
         .location-box__link {
             font: 400 #{rem(16)} / 140% var(--ff-base);
             justify-content: center;
             color: var(--color-accent);
-            @include transitions(0.3s, cubic-bezier(0.768, 0.304, 0.496, 0.884));
+            @include transitions(
+                0.3s,
+                cubic-bezier(0.768, 0.304, 0.496, 0.884)
+            );
 
             @include hover {
                 color: var(--color-wht);
@@ -50,6 +94,14 @@
         mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
         mask-composite: exclude;
         pointer-events: none;
+
+        @include media('tablet') {
+            border-radius: rem(16);
+        }
+
+        @include media('laptop') {
+            border-radius: rem(32);
+        }
     }
 
     &__phone {
@@ -89,6 +141,11 @@
         text-align: center;
         margin-bottom: rem(15);
         color: var(--color-accent);
+
+        @include media('tablet') {
+            font-size: rem(24);
+            margin-bottom: rem(16);
+        }
     }
 
     &__subtitle {
@@ -96,6 +153,13 @@
         text-align: center;
         margin-bottom: rem(24);
         color: #fff;
+        @include media('tablet') {
+            margin-bottom: rem(16);
+        }
+
+        @include media('laptop') {
+            margin-bottom: rem(32);
+        }
     }
 
     &__link {

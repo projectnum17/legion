@@ -67,15 +67,21 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     };
 
-    const sliderConfig = (selector, prev, next, pagination) => {
+    const sliderConfig = (
+        selector,
+        prev,
+        next,
+        pagination,
+        breakpoints = {}
+    ) => {
         if (typeof Swiper === 'undefined') return;
 
         const sliderEls = document.querySelector(selector);
 
         new Swiper(sliderEls, {
             slidesPerView: 1,
-            spaceBetween: 20,
-            speed: 700,
+            spaceBetween: 40,
+            speed: 900,
             navigation: {
                 prevEl: prev,
                 nextEl: next,
@@ -84,6 +90,7 @@ document.addEventListener('DOMContentLoaded', () => {
                 el: pagination,
                 type: 'fraction',
             },
+            breakpoints,
         });
     };
 
@@ -163,16 +170,91 @@ document.addEventListener('DOMContentLoaded', () => {
         '.js-reviews-slider',
         '.js-reviews-prev',
         '.js-reviews-next',
-        '.js-reviews-pagination'
+        '.js-reviews-pagination',
+        {
+            0: {
+                slidesPerView: 1,
+            },
+            768: {
+                slidesPerView: 2,
+                spaceBetween: 24,
+            },
+            1024: {
+                slidesPerView: 2.5,
+                spaceBetween: 24,
+            },
+            1920: {
+                slidesPerView: 4,
+            },
+        }
     );
 
     sliderConfig(
         '.js-videos-slider',
         '.js-videos-prev',
         '.js-videos-next',
-        '.js-videos-pagination'
+        '.js-videos-pagination',
+        {
+            0: {
+                slidesPerView: 1,
+            },
+            768: {
+                slidesPerView: 2,
+                spaceBetween: 24,
+            },
+            1024: {
+                slidesPerView: 3,
+                spaceBetween: 24,
+            },
+        }
     );
 
+    sliderConfig(
+        '.js-gallery-slider-mob',
+        '.js-gallery-prev-mob',
+        '.js-gallery-next-mob',
+        '.js-gallery-pagination-mob',
+        {
+            0: {
+                slidesPerView: 1,
+                grid: {
+                    rows: 1,
+                },
+                spaceBetween: 20,
+            },
+            480: {
+                slidesPerView: 1,
+                grid: {
+                    rows: 2,
+                    fill: 'row',
+                },
+                spaceBetween: 20,
+            },
+        }
+    );
+
+    sliderConfig(
+        '.js-gallery-slider',
+        '.js-gallery-prev',
+        '.js-gallery-next',
+        '.js-gallery-pagination',
+        {
+            0: {
+                slidesPerView: 1,
+                spaceBetween: 20,
+            },
+        }
+    );
+
+    const fancyInit = (selector) => {
+        Fancybox.bind(`[data-fancybox=${selector}]`, {
+            Thumbs: false,
+            Toolbar: true,
+        });
+    };
+
+    fancyInit('gallery-mob');
+    fancyInit('gallery');
     reviewBox();
     videoModal();
 });

@@ -2,9 +2,28 @@
 @use '../../base/mixins' as *;
 
 .services {
-    padding-block: var(--section-pdd);
+    padding-block: rem(70) rem(56);
     position: relative;
     overflow: hidden;
+
+    @include media('mobile-lg') {
+        padding-block: rem(64);
+    }
+    @include media('laptop') {
+        padding-block: rem(72);
+    }
+
+    @include media('desktop') {
+        padding-block: rem(88);
+    }
+    @include media('desktop-lg') {
+        padding-block: rem(96);
+    }
+
+    .container {
+        position: relative;
+        z-index: 2;
+    }
 
     &::after,
     &::before {
@@ -16,12 +35,30 @@
         width: rem(400);
         background: #ffef4726;
         filter: blur(300px);
+        @include media('tablet') {
+            height: rem(642);
+            width: rem(642);
+        }
+
+        @include media('laptop') {
+            height: rem(726);
+            width: rem(726);
+        }
+
+        @include media('desktop-lg') {
+            height: rem(924);
+            width: rem(924);
+        }
     }
 
     &::before {
         bottom: 263px;
         right: 0;
         transform: translate(30%, -30%);
+
+        @include media('desktop') {
+            bottom: 0;
+        }
     }
 
     &::after {
@@ -30,11 +67,43 @@
         transform: translate(-30%, -30%);
     }
 
+    &__bg {
+        display: none;
+        @include media('mobile-lg') {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            inset: 0;
+            pointer-events: none;
+            object-fit: cover;
+        }
+
+        &:last-of-type {
+            @include media('mobile-lg') {
+                display: block;
+            }
+
+            @include media('tablet') {
+                display: none;
+            }
+        }
+
+        &:first-of-type {
+            display: none;
+            @include media('tablet') {
+                display: block;
+            }
+        }
+    }
+
     &__content {
         &-slider {
             min-width: 0;
             width: 100%;
-            margin-bottom: rem(24);
+            margin-bottom: rem(32);
+            @include media('tablet') {
+                margin-bottom: 0;
+            }
         }
 
         &-slide {
@@ -45,17 +114,48 @@
     &__wrapper {
         display: flex;
         flex-direction: column-reverse;
+        @include media('tablet') {
+            flex-direction: column;
+            gap: rem(40);
+        }
     }
 
     &__title {
-        font: 800 #{rem(26)} / 100% var(--ff-base);
-        text-transform: uppercase;
         text-align: center;
         margin-bottom: rem(24);
         color: var(--color-wht);
 
+        @include media('mobile-lg') {
+            margin-bottom: rem(32);
+        }
+
+        &.mobile--visible {
+            @include media('tablet') {
+                display: none;
+            }
+        }
+
         &.mobile--hidden {
             display: none;
+            @include media('tablet') {
+                display: block;
+                margin-bottom: 0;
+            }
+        }
+    }
+
+    &__panel {
+        @include media('tablet') {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: rem(20);
+        }
+
+        @include media('desktop-lg') {
+            max-width: rem(1233);
+            margin: 0 auto;
+            width: 100%;
         }
     }
 
@@ -76,6 +176,23 @@
             .services-box__title {
                 color: var(--color-drk);
             }
+        }
+
+        @include media('mobile-lg') {
+            padding: rem(31) rem(31) rem(36) rem(31);
+        }
+
+        @include media('tablet') {
+            padding: rem(31) rem(23) rem(37) rem(23);
+        }
+
+        @include media('desktop') {
+            padding: rem(32);
+            border-radius: rem(32);
+        }
+
+        @include media('desktop-lg') {
+            padding: rem(31) rem(47);
         }
 
         &::before {
@@ -100,6 +217,10 @@
                 linear-gradient(#fff 0 0);
             mask-composite: exclude;
             pointer-events: none;
+
+            @include media('desktop') {
+                border-radius: rem(32);
+            }
         }
 
         &__img {
@@ -120,6 +241,10 @@
             text-align: center;
             text-transform: uppercase;
             color: var(--color-accent);
+
+            @include media('desktop') {
+                font-size: rem(24);
+            }
 
             @include transitions(
                 0.5s,

@@ -22,7 +22,7 @@
         visibility: visible;
         pointer-events: all;
 
-        .review-modal__content {
+        .video-modal__inner {
             transform: translateY(0%);
         }
     }
@@ -34,6 +34,8 @@
         align-items: center;
         justify-content: center;
         padding: rem(6);
+        transform: translateY(-20%);
+        transition: all 0.3s cubic-bezier(0.66, 0, 0.355, 0.861);
     }
 
     &__video {
@@ -71,6 +73,7 @@
     }
 
     &__wrapper {
+        max-width: rem(860);
         position: relative;
         width: 100%;
     }

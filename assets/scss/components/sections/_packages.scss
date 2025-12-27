@@ -4,7 +4,8 @@
 .packages {
     position: relative;
     overflow: hidden;
-    padding-block: rem(48);
+    padding-block: var(--section-pdd);
+
 
     &::after {
         content: '';
@@ -36,16 +37,38 @@
     }
 
     &__title {
-        font: 800 #{rem(26)} / 100% var(--ff-base);
         text-align: center;
-        text-transform: uppercase;
         margin-bottom: rem(28);
+        @include media('mobile-lg') {
+            margin-bottom: rem(40);
+        }
+        @include media('tablet') {
+            max-width: rem(345);
+        }
+
+        @include media('laptop') {
+            max-width: 40%;
+            text-align: left;
+            margin-left: rem(50);
+        }
     }
 
     &__cards {
         display: grid;
         grid-template-columns: repeat(1, 1fr);
         gap: rem(32);
+        @include media('mobile-lg') {
+            gap: rem(40);
+        }
+        @include media('tablet') {
+            grid-template-columns: repeat(2, 1fr);
+            gap: rem(40) rem(24);
+        }
+
+        @include media('desktop') {
+            grid-template-columns: repeat(3, 1fr);
+            gap: rem(32);
+        }
     }
 
     .decoration-chev {
@@ -55,5 +78,22 @@
         right: -30px;
         z-index: 2;
         pointer-events: none;
+
+        @include media('mobile-lg') {
+            right: auto;
+            left: 24px;
+            top: 24px;
+        }
+
+        @include media('laptop') {
+            top: 136px;
+            left: auto;
+            right: -30px;
+            max-width: 396px;
+        }
+
+        @include media('desktop-lg') {
+            display: none;
+        }
     }
 }

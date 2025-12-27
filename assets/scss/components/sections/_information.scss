@@ -7,33 +7,86 @@
 
     .container {
         padding: 0;
+        z-index: 2;
+        position: relative;
     }
 
     &__reviews {
+        padding-top: rem(56);
         position: relative;
         z-index: 2;
         margin-bottom: rem(-300);
-        padding-inline: var(--container-padding);
         overflow: hidden;
+        padding-inline: var(--container-padding);
+        @include media('tablet') {
+            display: flex;
+            flex-direction: column-reverse;
+            gap: 40px;
+
+            .reviews-panel {
+                display: flex;
+                justify-content: flex-end;
+            }
+        }
+        @include media('laptop') {
+            margin-bottom: rem(-270);
+        }
     }
 
     &__videos {
         padding-inline: var(--container-padding);
-        margin-bottom: rem(56);
+    }
+
+    &__gallery {
+        padding-inline: var(--container-padding);
     }
 
     .decoration-chev {
+        pointer-events: none;
         position: absolute;
         max-width: 197px;
+
+        @include media('tablet') {
+            max-width: rem(280);
+        }
+
+        @include media('laptop') {
+            max-width: rem(396);
+        }
 
         &.frst-el {
             top: 16px;
             left: 16px;
+
+            @include media('tablet') {
+                top: 24px;
+                left: 100px;
+            }
+
+            @include media('desktop') {
+                left: 170px;
+            }
         }
 
         &.scnd-el {
             left: 61px;
-            top: 300px;
+            top: 460px;
+
+            @include media('tablet') {
+                left: 25px;
+            }
+            @include media('desktop') {
+                top: 1100px;
+                left: 60px;
+            }
+        }
+
+        &.thrd-el {
+            left: 61px;
+            bottom: 50px;
+            @include media('desktop') {
+                left: 50%;
+            }
         }
     }
 }

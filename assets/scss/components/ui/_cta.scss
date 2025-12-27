@@ -34,8 +34,14 @@
     }
 
     &--grn {
+        border: 2px solid transparent;
         color: var(--color-wht);
         background: var(--color-grn);
+        @include hover {
+            background: var(--hover-accent);
+            color: var(--color-violet);
+            border-color: var(--color-violet);
+        }
     }
 
     &--violet {

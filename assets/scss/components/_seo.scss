@@ -6,6 +6,10 @@
     overflow: hidden;
     padding-block: var(--section-pdd);
 
+    @include media('mobile-lg') {
+        box-shadow: 10px 10px 20px 15px #00000040;
+    }
+
     &::after {
         content: '';
         position: absolute;
@@ -35,16 +39,20 @@
         text-align: center;
         gap: rem(24);
         margin-bottom: rem(32);
-    }
-
-    &__title {
-        font: 800 #{rem(26)} / 100% var(--ff-base);
-        text-transform: uppercase;
-        font-style: italic;
+        @include media('mobile-lg') {
+            gap: rem(32);
+        }
+        @include media('tablet') {
+            gap: rem(24);
+        }
     }
 
     &__descr {
+        max-width: rem(716);
         font: 700 #{rem(20)} / 120% var(--ff-base);
+        @include media('tablet') {
+            font-size: rem(24);
+        }
     }
 
     &__content {
@@ -53,11 +61,41 @@
         &.container-flex {
             display: flex;
             flex-direction: column;
+            gap: rem(24);
+            @include media('laptop') {
+                flex-direction: row;
+                gap: rem(30);
+
+                div {
+                    width: 50%;
+                }
+            }
         }
 
-        ul,ol {
+        &.container-hidden {
+            height: 0;
+            overflow: hidden;
+            @include transitions(
+                0.3s,
+                cubic-bezier(0.768, 0.304, 0.496, 0.884)
+            );
+
+            &.is-active {
+                padding-top: rem(24);
+            }
+        }
+
+        ul,
+        ol {
             margin-top: 0;
             padding-left: rem(20);
         }
+    }
+
+    &__more {
+        font: 400 #{rem(16)} / 140% var(--ff-base);
+        margin: rem(32) auto 0;
+        padding-bottom: rem(4);
+        border-bottom: 1px solid var(--color-drk);
     }
 }

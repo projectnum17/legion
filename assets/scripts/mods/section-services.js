@@ -18,6 +18,19 @@ document.addEventListener('DOMContentLoaded', () => {
                 el: pagination,
                 type: 'fraction',
             },
+            breakpoints: {
+                0: {
+                    slidesPerView: 1,
+                },
+                768: {
+                    slidesPerView: 2,
+                    spaceBetween: 24,
+                },
+                1024: {
+                    slidesPerView: 3,
+                    spaceBetween: 24,
+                },
+            },
         });
     };
 
