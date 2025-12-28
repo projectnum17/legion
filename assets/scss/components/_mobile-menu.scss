@@ -51,13 +51,13 @@
         width: rem(20);
         height: rem(20);
         position: absolute;
-        top: 5px;
-        right: 5px;
+        top: rem(16);
+        right: rem(16);
         color: var(--color-accent);
 
         @include media('mobile-lg') {
-            top: 15px;
-            right: 15px;
+            top: rem(20);
+            right: rem(20);
         }
 
         svg {
@@ -299,10 +299,7 @@
 
     li,
     span {
-        @include transitions(
-            0.3s,
-            cubic-bezier(0.768, 0.304, 0.496, 0.884)
-        );
+        @include transitions(0.3s, cubic-bezier(0.768, 0.304, 0.496, 0.884));
     }
 
     &__current {
@@ -325,10 +322,7 @@
         border: 1px solid var(--color-accent);
         background: var(--color-drk);
         backdrop-filter: blur(20px);
-        @include transitions(
-            0.3s,
-            cubic-bezier(0.768, 0.304, 0.496, 0.884)
-        );
+        @include transitions(0.3s, cubic-bezier(0.768, 0.304, 0.496, 0.884));
 
         &.is-show {
             pointer-events: all;
