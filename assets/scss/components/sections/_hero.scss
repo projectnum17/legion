@@ -10,6 +10,28 @@
         min-height: auto;
     }
 
+    &:has(.hero__reminders) {
+        .hero__content {
+            padding-block: rem(128) rem(92);
+
+            @include media('mobile-lg') {
+                padding-block: rem(152) rem(72);
+            }
+
+            @include media('tablet') {
+                padding-block: rem(252) rem(56);
+            }
+
+            @include media('laptop') {
+                padding-block: rem(204) rem(48);
+            }
+
+            @include media('desktop') {
+                padding-block: rem(232) rem(48);
+            }
+        }
+    }
+
     &::after {
         content: '';
         inset: 0;
@@ -24,6 +46,25 @@
     .container {
         position: relative;
         z-index: 3;
+    }
+
+    &__reminders {
+        position: absolute;
+        bottom: rem(32);
+        font: 400 #{rem(16)} / 140% var(--ff-base);
+        color: var(--color-wht);
+
+        @include media('mobile-lg') {
+            bottom: rem(26);
+        }
+
+        @include media('laptop') {
+            bottom: rem(56);
+        }
+
+        @include media('desktop') {
+            bottom: rem(48);
+        }
     }
 
     &__bg {

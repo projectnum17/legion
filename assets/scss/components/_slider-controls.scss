@@ -16,6 +16,21 @@
         margin: 0;
     }
 
+    &--colored {
+        .slider-controls__btn {
+            border: 1px solid var(--color-drk);
+            color: var(--color-drk);
+            background: var(--color-accent);
+        }
+
+        .slider-controls__pagination {
+            color: var(--color-accent);
+            .swiper-pagination-current {
+                color: var(--color-drk);
+            }
+        }
+    }
+
     &--light {
         .slider-controls__btn {
             border: 1px solid var(--color-drk);

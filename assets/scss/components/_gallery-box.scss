@@ -1,6 +1,29 @@
 @use '../base/media' as *;
 @use '../base/mixins' as *;
 
+.tabs-content {
+    &__items {
+        display: grid;
+        grid-template-columns: repeat(4, 1fr);
+        gap: 16px;
+
+        a {
+            height: rem(250);
+
+            &:nth-child(12n + 5),
+            &:nth-child(12n + 6),
+            &:nth-child(12n + 7),
+            &:nth-child(12n + 8) {
+                height: rem(350);
+            }
+        }
+    }
+
+    .gallery-box {
+        height: 100%;
+    }
+}
+
 .gallery-content {
     padding-bottom: rem(64);
     .slider-controls {

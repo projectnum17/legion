@@ -49,6 +49,7 @@
     }
 
     &__content {
+        max-width: 650px;
         overflow: auto;
         max-height: 95%;
         transform: translateY(-20%);

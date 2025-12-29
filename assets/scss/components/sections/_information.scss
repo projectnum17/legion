@@ -33,6 +33,10 @@
         }
     }
 
+    &__tabs {
+        padding-inline: var(--container-padding);
+    }
+
     &__videos {
         padding-inline: var(--container-padding);
     }

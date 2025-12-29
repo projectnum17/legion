@@ -2,21 +2,25 @@
 @use '../../base/mixins' as *;
 
 .feedback {
-    padding-block: rem(280) rem(0);
+    padding-block: rem(48) rem(0);
     position: relative;
     background: var(--color-accent);
     box-shadow: 10px 10px 20px 0px #0000001a;
 
     @include media('mobile-lg') {
-        padding-block: rem(320) rem(64);
-    }
-
-    @include media('tablet') {
-        padding-block: rem(250) rem(64);
+        padding-block: rem(64);
     }
 
     @include media('laptop') {
-        padding-block: rem(300) rem(64);
+        padding-block: rem(72);
+    }
+
+    @include media('desktop') {
+        padding-block: rem(88);
+    }
+
+    @include media('desktop-lg') {
+        padding-block: rem(72);
     }
 
     .container {
@@ -150,13 +154,14 @@
             opacity: 0.8;
         }
         @include media('laptop') {
-            top: 50%;
+            top: 100%;
             transform: translate(-50%, -100%);
             max-width: 88%;
         }
 
         @include media('desktop') {
             max-width: 80%;
+            top: 80%;
         }
     }
 

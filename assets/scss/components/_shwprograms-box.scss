@@ -1,0 +1,109 @@
+@use '../base/media' as *;
+@use '../base/mixins' as *;
+
+.shwprograms-box {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    padding: rem(24);
+    border-radius: rem(16);
+    background: var(--color-wht);
+
+    @include media('desktop') {
+        border-radius: rem(32);
+    }
+
+    &--drk {
+        background: var(--color-drk);
+        position: relative;
+
+        &::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            padding: 1px;
+            border-radius: rem(16);
+            background: linear-gradient(
+                90deg,
+                rgba(255, 209, 0, 0.5) 0%,
+                rgba(255, 209, 0, 0.15) 100%
+            );
+            -webkit-mask: linear-gradient(#fff 0 0) content-box,
+                linear-gradient(#fff 0 0);
+            -webkit-mask-composite: xor;
+
+            mask: linear-gradient(#fff 0 0) content-box,
+                linear-gradient(#fff 0 0);
+            mask-composite: exclude;
+            pointer-events: none;
+
+            @include media('desktop') {
+                border-radius: rem(32);
+            }
+        }
+
+        .shwprograms-box__title,
+        .shwprograms-box__price {
+            color: var(--color-accent);
+        }
+
+        .shwprograms-box__descr {
+            color: var(--color-wht);
+        }
+    }
+
+    &__img {
+        border-radius: rem(13);
+        overflow: hidden;
+        margin-bottom: rem(24);
+        height: rem(141);
+
+        @include media('mobile-lg') {
+            height: rem(217);
+        }
+
+        @include media('laptop') {
+            height: rem(241);
+        }
+
+        @include media('desktop') {
+            height: rem(199);
+        }
+
+        @include media('desktop-lg') {
+            height: rem(267);
+        }
+
+        img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+    }
+
+    &__title {
+        font: 700 #{rem(20)} / 120% var(--ff-base);
+        text-align: center;
+        margin-bottom: rem(16);
+    }
+
+    &__descr {
+        font: 400 #{rem(16)} / 140% var(--ff-base);
+        margin-bottom: rem(16);
+    }
+
+    &__price {
+        font: 700 #{rem(16)} / 140% var(--ff-base);
+        display: inline-flex;
+        margin-bottom: rem(24);
+    }
+
+    &__btn {
+        margin-top: auto;
+        width: 100%;
+        border-color: transparent;
+    }
+}

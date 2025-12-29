@@ -1,0 +1,97 @@
+@use '../../base/media' as *;
+@use '../../base/mixins' as *;
+
+.shwprograms {
+    overflow: hidden;
+    padding-block: rem(61);
+    background: var(--color-accent);
+
+    &__title {
+        text-align: center;
+        margin-bottom: rem(32);
+
+        &.mobile--hidden {
+            display: none;
+            @include media('tablet') {
+                display: block;
+                margin-bottom: 0;
+            }
+
+            @include media('desktop-lg') {
+                margin-left: rem(150);
+            }
+        }
+
+        &.mobile--visible {
+            @include media('tablet') {
+                display: none;
+            }
+        }
+    }
+
+    &__panel {
+        @include media('tablet') {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: rem(20);
+        }
+    }
+
+    &__wrapper {
+        display: flex;
+        flex-direction: column-reverse;
+        gap: rem(32);
+        @include media('tablet') {
+            flex-direction: column;
+            gap: rem(20);
+        }
+    }
+
+    &__content {
+        &-slider {
+            width: 100%;
+            min-width: 0;
+        }
+
+        &-slide {
+            height: auto;
+        }
+    }
+
+    .decoration-chev {
+        max-width: rem(396);
+        width: 100%;
+        pointer-events: none;
+        position: absolute;
+        z-index: -1;
+
+        &.frst-el {
+            right: rem(-60);
+            top: rem(50);
+            @include media('tablet') {
+                right: 50%;
+                transform: translateX(40%);
+            }
+
+            @include media('laptop') {
+                right: auto;
+                transform: translateX(0);
+                left: rem(100);
+            }
+
+            @include media('desktop-lg') {
+                left: rem(200);
+            }
+        }
+
+        &.scnd-el {
+            display: none;
+            @include media('tablet') {
+                display: block;
+                bottom: rem(16);
+                right: rem(44);
+            }
+        }
+    }
+}

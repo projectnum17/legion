@@ -196,7 +196,7 @@ document.addEventListener('DOMContentLoaded', () => {
                 spaceBetween: 24,
             },
             1024: {
-                slidesPerView: 2.5,
+                slidesPerView: 3.5,
                 spaceBetween: 24,
             },
             1920: {
@@ -263,6 +263,7 @@ document.addEventListener('DOMContentLoaded', () => {
     );
 
     const fancyInit = (selector) => {
+        if (!selector) return;
         Fancybox.bind(`[data-fancybox=${selector}]`, {
             Thumbs: false,
             Toolbar: true,
@@ -271,6 +272,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
     fancyInit('gallery-mob');
     fancyInit('gallery');
+    fancyInit('gallery-tabs');
     reviewBox();
     videoModal();
 });

@@ -2,9 +2,9 @@
 @use '../base/mixins' as *;
 
 .pack-card {
-    $ico-width: rem(160);
-    $ico-height: rem(240);
-    $ico-top: -30px;
+    --ico-width: #{rem(160)};
+    --ico-height: #{rem(240)};
+    --ico-top: -30px;
     display: flex;
     flex-direction: column;
     position: relative;
@@ -15,24 +15,140 @@
     box-shadow: 10px 10px 20px 0px #00000033;
 
     @include media('tablet') {
-        $ico-width: rem(112);
-        $ico-height: rem(168);
-        $ico-top: rem(0);
+        --ico-width: #{rem(112)};
+        --ico-height: #{rem(168)};
+        --ico-top: #{rem(0)};
     }
     @include media('laptop') {
-        $ico-width: rem(160);
-        $ico-height: rem(240);
-        $ico-top: rem(-30);
+        --ico-width: #{rem(160)};
+        --ico-height: #{rem(240)};
+        --ico-top: #{rem(-30)};
     }
     @include media('desktop') {
-        $ico-width: rem(128);
-        $ico-height: rem(192);
-        $ico-top: rem(16);
+        --ico-width: #{rem(128)};
+        --ico-height: #{rem(192)};
+        --ico-top: #{rem(16)};
     }
     @include media('desktop-lg') {
-        $ico-width: rem(160);
-        $ico-height: rem(240);
-        $ico-top: rem(-30);
+        --ico-width: #{rem(160)};
+        --ico-height: #{rem(240)};
+        --ico-top: #{rem(-30)};
+    }
+
+    &--birthday {
+        --ico-width: #{rem(120)};
+        --ico-height: #{rem(120)};
+        --ico-top: #{rem(16)};
+        box-shadow: none;
+
+        @include media('mobile-lg') {
+            --ico-width: #{rem(144)};
+            --ico-height: #{rem(144)};
+        }
+
+        @include media('tablet') {
+            --ico-width: #{rem(120)};
+            --ico-height: #{rem(120)};
+        }
+        @include media('laptop') {
+            --ico-width: #{rem(144)};
+            --ico-height: #{rem(144)};
+            --ico-top: #{rem(16)};
+        }
+        @include media('desktop-lg') {
+            --ico-width: #{rem(160)};
+            --ico-height: #{rem(160)};
+            --ico-top: #{rem(16)};
+        }
+
+        .pack-card__ico {
+            left: rem(8);
+            display: inline-flex;
+            display: block;
+            width: var(--ico-width);
+            height: var(--ico-height);
+            position: absolute;
+            top: var(--ico-top);
+            z-index: 2;
+            background: var(--color-accent);
+        }
+
+        .pack-card__naming {
+            padding-left: calc(var(--ico-width) + #{rem(8)});
+            min-height: calc(
+                var(--ico-height) - #{rem(10)} + var(--ico-top) + #{rem(16)}
+            );
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+
+            @include media('mobile-lg') {
+                min-height: calc(
+                    var(--ico-height) - #{rem(10)} + var(--ico-top) - #{rem(32)}
+                );
+            }
+
+            @include media('tablet') {
+                min-height: rem(152);
+            }
+        }
+
+        .pack-card__head::after {
+            @include media('tablet') {
+                width: 100%;
+            }
+
+            @include media('laptop') {
+                width: calc(100% - var(--ico-width) + 80px);
+            }
+        }
+
+        .pack-card__title {
+            font-size: rem(24);
+            margin-bottom: 0;
+            @include media('laptop') {
+                font-size: rem(32);
+            }
+        }
+
+        .pack-card__price {
+            display: none;
+        }
+
+        .pack-card__list {
+            @include media('mobile-lg') {
+                margin-bottom: rem(32);
+                padding-top: rem(50);
+            }
+
+            @include media('tablet') {
+                padding-top: rem(31);
+            }
+        }
+
+        &.card-wth {
+            background: #ffebbb;
+
+            .pack-card__ico {
+                background: #ffebbb;
+            }
+        }
+
+        &.card-pnk {
+            background: #f9e1e8;
+
+            .pack-card__ico {
+                background: #f9e1e8;
+            }
+        }
+
+        &.card-grn {
+            background: #e1f9e1;
+
+            .pack-card__ico {
+                background: #e1f9e1;
+            }
+        }
     }
 
     &::before {
@@ -81,10 +197,10 @@
         .pack-card__naming {
             padding: rem(39) rem(23) rem(23);
             @include media('mobile-lg') {
-                padding-left: $ico-width;
+                padding-left: var(--ico-width);
             }
             @include media('desktop') {
-                padding-left: calc($ico-width + rem(8));
+                padding-left: calc(var(--ico-width) + rem(8));
             }
         }
     }
@@ -103,7 +219,7 @@
             background: var(--color-drk);
 
             @include media('mobile-lg') {
-                width: calc(100% - $ico-width + 80px);
+                width: calc(100% - var(--ico-width) + 80px);
                 right: 0;
             }
         }
@@ -112,15 +228,15 @@
     &__naming {
         padding: rem(31) rem(23) rem(23);
         @include media('mobile-lg') {
-            padding-left: $ico-width;
-            min-height: calc($ico-height - #{rem(10)} + $ico-top);
+            padding-left: var(--ico-width);
+            min-height: calc(var(--ico-height) - #{rem(10)} + var(--ico-top));
             display: flex;
             flex-direction: column;
             justify-content: center;
         }
 
         @include media('desktop') {
-            padding-left: calc($ico-width + rem(8));
+            padding-left: calc(var(--ico-width) + rem(8));
         }
     }
 
@@ -128,16 +244,15 @@
         display: none;
         @include media('mobile-lg') {
             display: block;
-            width: $ico-width;
-            height: $ico-height;
+            width: var(--ico-width);
+            height: var(--ico-height);
             position: absolute;
             left: 0;
-            top: $ico-top;
+            top: var(--ico-top);
             z-index: 2;
         }
 
         @include media('desktop') {
-
             img {
                 height: 100%;
                 object-fit: cover;
@@ -197,6 +312,18 @@
 
     &__link {
         width: 100%;
+    }
+
+    &__value {
+        width: 100%;
+        justify-content: center;
+        display: inline-flex;
+        margin-bottom: rem(24);
+        font: 700 #{rem(40)} / 100% var(--ff-base);
+        color: var(--color-violet);
+        @include media('desktop-lg') {
+            margin-bottom: rem(33);
+        }
     }
 
     &__list {
@@ -274,6 +401,12 @@
     &__arrow {
         display: none;
         width: 100%;
+
+        svg {
+            width: 100%;
+            height: auto;
+        }
+
         @include media('tablet') {
             display: block;
             margin-top: auto;
@@ -288,6 +421,12 @@
         @include media('desktop') {
             max-width: rem(275);
             margin-top: 0;
+        }
+
+        @include media('desktop-lg') {
+            max-width: rem(346);
+            margin-top: rem(52);
+            align-self: flex-start;
         }
     }
 
@@ -313,6 +452,15 @@
 
         @include media('tablet') {
             min-width: rem(413);
+        }
+
+        @include media('laptop') {
+            height: rem(696);
+
+            img {
+                height: 100%;
+                object-fit: cover;
+            }
         }
 
         @include media('desktop') {

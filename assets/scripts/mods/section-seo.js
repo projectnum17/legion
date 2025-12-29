@@ -4,14 +4,16 @@ document.addEventListener('DOMContentLoaded', () => {
     const btn = document.querySelector('.js-seo-more');
     const content = document.querySelector('.js-seo-hidden');
 
+    if (!btn || !content) return;
+
     btn.addEventListener('click', () => {
         if (content.style.height) {
             content.style.height = null;
         } else {
             content.style.height = content.scrollHeight + 'px';
-            content.classList.add('is-active')
+            content.classList.add('is-active');
         }
 
-        btn.style.display = 'none'
+        btn.style.display = 'none';
     });
 });

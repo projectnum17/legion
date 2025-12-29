@@ -1,0 +1,358 @@
+@use '../../base/media' as *;
+@use '../../base/mixins' as *;
+
+.inclusive {
+    position: relative;
+    padding-block: rem(40) 0;
+
+    @include media('tablet') {
+        padding-block: rem(40) rem(48);
+    }
+
+    @include media('desktop') {
+        padding-block: rem(64);
+    }
+
+    &::after {
+        pointer-events: none;
+        z-index: 2;
+        content: '';
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        top: 0;
+        left: 0;
+
+        background: linear-gradient(
+            270.22deg,
+            rgba(35, 35, 35, 0) 0%,
+            rgba(35, 35, 35, 0.826923) 0,
+            #232323 99.81%
+        );
+
+        @include media('mobile-lg') {
+            background: linear-gradient(
+                270.22deg,
+                rgba(35, 35, 35, 0) 17.99%,
+                rgba(35, 35, 35, 0.826923) 38.44%,
+                #232323 99.81%
+            );
+        }
+    }
+
+    .container {
+        position: relative;
+        z-index: 3;
+        display: flex;
+        flex-direction: column;
+        gap: rem(40);
+        margin-bottom: rem(-50);
+        @include media('tablet') {
+            margin-bottom: 0;
+        }
+
+        @include media('desktop') {
+            flex-direction: row;
+            justify-content: space-between;
+        }
+    }
+
+    &__bg {
+        pointer-events: none;
+        z-index: 1;
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        inset: 0;
+        object-fit: cover;
+    }
+
+    &__head {
+        position: relative;
+    }
+
+    &__info {
+        @include media('desktop') {
+            max-width: rem(598);
+            width: 100%;
+        }
+
+        @include media('desktop-lg') {
+            max-width: rem(920);
+        }
+    }
+
+    &__title {
+        width: max-content;
+        z-index: 2;
+        position: relative;
+        font: 900 #{rem(48)} / 100% var(--ff-base);
+        text-transform: uppercase;
+        font-style: italic;
+        margin-bottom: rem(16);
+        text-shadow: 5px 5px 4px rgba(0, 0, 0, 0.6);
+        color: var(--color-accent);
+
+        @include media('mobile-lg') {
+            font-size: rem(64);
+        }
+
+        @include media('tablet') {
+            font-size: rem(104);
+            margin-bottom: rem(24);
+        }
+
+        @include media('laptop') {
+            font-size: rem(134);
+        }
+
+        @include media('desktop') {
+            font-size: rem(104);
+        }
+
+        @include media('desktop-lg') {
+            font-size: rem(160);
+            margin-bottom: rem(16);
+        }
+
+        &::after {
+            content: '';
+            z-index: -1;
+            top: 0;
+            right: rem(10);
+            transform: translateY(-50%);
+            position: absolute;
+            width: rem(189);
+            height: rem(153);
+            background: url('../images/pic-thumb.png') no-repeat center center /
+                contain;
+
+            @include media('tablet') {
+                width: rem(334);
+                height: rem(279);
+            }
+
+            @include media('laptop') {
+                transform: translateY(-25%);
+            }
+
+            @include media('desktop') {
+                transform: translateY(-45%);
+            }
+
+            @include media('desktop-lg') {
+                width: rem(402);
+                height: rem(326);
+                left: rem(300);
+                right: auto;
+                transform: translateY(-25%);
+            }
+        }
+    }
+
+    &__subtitle {
+        z-index: 2;
+        position: relative;
+        font: 700 #{rem(20)} / 120% var(--ff-base);
+        margin-bottom: rem(24);
+        color: var(--color-accent);
+
+        @include media('mobile-lg') {
+            max-width: rem(331);
+        }
+
+        @include media('laptop') {
+            max-width: 100%;
+            margin-bottom: rem(66);
+        }
+
+        @include media('desktop-lg') {
+            font-size: rem(24);
+            margin-bottom: rem(32);
+        }
+    }
+
+    &__list {
+        margin-bottom: rem(16);
+        font: 700 #{rem(16)} / 140% var(--ff-base);
+        color: var(--color-wht);
+    }
+
+    &__services {
+        display: grid;
+        grid-template-columns: repeat(1, 1fr);
+        gap: rem(16);
+        padding-left: rem(16);
+        margin-bottom: rem(32);
+        color: var(--color-wht);
+
+        @include media('laptop') {
+            grid-template-columns: repeat(2, 1fr);
+            margin-bottom: rem(87);
+        }
+
+        @include media('desktop-lg') {
+            margin-bottom: rem(40);
+        }
+
+        li {
+            display: inline-flex;
+            align-items: center;
+            gap: rem(13);
+            font: 400 #{rem(16)} / 140% var(--ff-base);
+
+            &::before {
+                content: '';
+                display: inline-flex;
+                flex-shrink: 0;
+                width: rem(4);
+                height: rem(4);
+                border-radius: 50%;
+                background: var(--color-wht);
+            }
+        }
+    }
+
+    &__price {
+        display: inline-flex;
+        font: 700 #{rem(32)} / 100% var(--ff-base);
+        margin-bottom: rem(32);
+        color: var(--color-accent);
+        @include media('tablet') {
+            font-size: rem(36);
+            margin-bottom: rem(24);
+        }
+
+        @include media('laptop') {
+            margin-bottom: rem(40);
+        }
+
+        @include media('desktop-lg') {
+            margin-bottom: rem(24);
+            font-size: rem(36);
+        }
+    }
+
+    &__link {
+        width: 100%;
+        @include media('laptop') {
+            max-width: rem(384);
+        }
+    }
+
+    &__pic {
+        border-radius: rem(6);
+        overflow: hidden;
+        height: rem(192);
+        width: rem(288);
+        position: relative;
+        flex: 1;
+        display: flex;
+        scroll-snap-align: start;
+        flex: 0 0 auto;
+        @include media('tablet') {
+            box-shadow: 10px 10px 40px 0px #00000099;
+        }
+
+        @include media('mobile-lg') {
+            height: rem(139);
+            width: rem(208);
+        }
+
+        @include media('tablet') {
+            height: rem(218);
+            width: rem(328);
+        }
+
+        @include media('desktop') {
+            height: rem(346);
+            width: 100%;
+        }
+
+        &::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            padding: 1px;
+            border-radius: rem(6);
+            background: linear-gradient(
+                90deg,
+                rgba(255, 209, 0, 0.5) 0%,
+                rgba(255, 209, 0, 0.15) 100%
+            );
+            -webkit-mask: linear-gradient(#fff 0 0) content-box,
+                linear-gradient(#fff 0 0);
+            -webkit-mask-composite: xor;
+
+            mask: linear-gradient(#fff 0 0) content-box,
+                linear-gradient(#fff 0 0);
+            mask-composite: exclude;
+            pointer-events: none;
+        }
+
+        img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+    }
+
+    &__about {
+        @include media('tablet') {
+            display: flex;
+            gap: rem(24);
+            align-items: center;
+            justify-content: space-between;
+        }
+    }
+
+    &__gallery {
+        overflow-x: auto;
+        display: flex;
+        gap: rem(16);
+        scroll-snap-type: x mandatory;
+        scroll-behavior: smooth;
+        -webkit-overflow-scrolling: touch;
+        scrollbar-width: none;
+        -ms-overflow-style: none;
+        &::-webkit-scrollbar {
+            display: none;
+        }
+
+        @include media('laptop') {
+            margin-bottom: rem(-100);
+        }
+
+        &.tablet--visible {
+            display: none;
+            @include media('tablet') {
+                display: flex;
+                flex-direction: column;
+                overflow: inherit;
+                gap: rem(16);
+            }
+
+            @include media('desktop') {
+                display: none;
+            }
+        }
+
+        &.tablet--hidden {
+            @include media('tablet') {
+                display: none;
+            }
+            @include media('desktop') {
+                display: flex;
+                overflow: inherit;
+                flex-direction: column;
+                margin: 0;
+                max-width: rem(520);
+                width: 100%;
+                margin-block: rem(-120);
+            }
+        }
+    }
+}

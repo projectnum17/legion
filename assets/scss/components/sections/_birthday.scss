@@ -1,0 +1,156 @@
+@use '../../base/media' as *;
+@use '../../base/mixins' as *;
+
+.birthdays {
+    position: relative;
+    padding-block: rem(56);
+    background: var(--color-accent);
+
+    .container {
+        margin-top: rem(-304);
+
+        @include media('tablet') {
+            margin-top: rem(-600);
+        }
+
+        @include media('laptop') {
+            margin-top: rem(-400);
+        }
+    }
+
+    &__bg {
+        display: none;
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        inset: 0;
+        object-fit: cover;
+        @include media('mobile-lg') {
+            display: block;
+        }
+    }
+
+    &__descr {
+        @include media('laptop') {
+            display: flex;
+            align-items: center;
+            gap: rem(50);
+            position: relative;
+            z-index: 4;
+        }
+    }
+
+    &__title {
+        margin-bottom: rem(8);
+        color: var(--color-wht);
+
+        @include media('desktop-lg') {
+            margin-left: rem(70);
+        }
+    }
+
+    &__text {
+        font: 700 #{rem(16)} / 140% var(--ff-base);
+        color: var(--color-accent);
+    }
+
+    &__slider {
+        z-index: 3;
+        width: 100%;
+        min-width: 0;
+    }
+
+    &__wrapper {
+        gap: rem(32);
+        display: flex;
+        flex-direction: column-reverse;
+        @include media('tablet') {
+            flex-direction: column;
+        }
+    }
+
+    &__inner {
+        @include media('tablet') {
+            display: flex;
+            gap: rem(16);
+            align-items: flex-start;
+            justify-content: space-between;
+        }
+    }
+
+    &__info {
+        margin-bottom: rem(24);
+
+        @include media('tablet') {
+            margin-bottom: 0;
+        }
+
+        @include media('desktop') {
+            max-width: 70%;
+        }
+
+        &.mobile--hidden {
+            display: none;
+            @include media('tablet') {
+                display: block;
+            }
+        }
+
+        &.mobile--visible {
+            @include media('tablet') {
+                display: none;
+            }
+        }
+    }
+
+    .slider-controls {
+        position: relative;
+        z-index: 3;
+        &__btn {
+            border: 1px solid var(--color-drk);
+            color: var(--color-drk);
+            background: var(--color-wht);
+
+            @include media('tablet') {
+                border: 1px solid var(--color-accent);
+                color: var(--color-accent);
+                background: var(--color-drk);
+            }
+        }
+
+        &__pagination {
+            .swiper-pagination-current {
+                color: var(--color-drk);
+
+                @include media('tablet') {
+                    color: var(--color-accent);
+                }
+            }
+        }
+    }
+
+    .decoration-chev {
+        max-width: rem(320);
+        width: 100%;
+        display: none;
+        z-index: -1;
+        position: absolute;
+        pointer-events: none;
+
+        @include media('mobile-lg') {
+            display: block;
+        }
+
+        &.frst-el {
+            top: rem(-180);
+            right: 0;
+        }
+
+        &.scnd-el {
+            z-index: 2;
+            left: 50%;
+            transform: translateX(-50%);
+            bottom: rem(100);
+        }
+    }
+}
