@@ -270,9 +270,25 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     };
 
+    const filtersBtns = () => {
+        const buttons = document.querySelectorAll('.js-filter-btn');
+
+        if (!buttons.length) return;
+
+        buttons[0].classList.add('is-active');
+
+        buttons.forEach((btn) => {
+            btn.addEventListener('click', () => {
+                buttons.forEach((el) => el.classList.remove('is-active'));
+                btn.classList.add('is-active');
+            });
+        });
+    };
+
     fancyInit('gallery-mob');
     fancyInit('gallery');
     fancyInit('gallery-tabs');
     reviewBox();
     videoModal();
+    filtersBtns();
 });
