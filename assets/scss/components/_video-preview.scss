@@ -1,0 +1,108 @@
+@use '../base/media' as *;
+@use '../base/mixins' as *;
+
+.video-preview {
+    margin-bottom: rem(74);
+    position: relative;
+
+    &::after,
+    &::before {
+        z-index: 2;
+        pointer-events: none;
+        content: '';
+        position: absolute;
+        border-radius: 50%;
+        height: rem(476);
+        width: rem(476);
+        background: #ffef4726;
+        filter: blur(300px);
+        @include media('mobile-lg') {
+            height: rem(558);
+            width: rem(558);
+        }
+        @include media('tablet') {
+            height: rem(666);
+            width: rem(666);
+        }
+        @include media('laptop') {
+            height: rem(1024);
+            width: rem(1024);
+        }
+    }
+    &__title {
+        margin-bottom: rem(32);
+        color: var(--color-wht);
+    }
+
+    &__content {
+        display: flex;
+        flex-direction: column-reverse;
+        gap: rem(32);
+        @include media('laptop') {
+            flex-direction: row;
+
+            .video-preview__video,
+            .video-preview__info {
+                max-width: 100%;
+                width: 50%;
+            }
+        }
+    }
+
+    &__text {
+        font: 400 #{rem(16)} / 140% var(--ff-base);
+        margin-bottom: rem(24);
+        color: var(--color-wht);
+    }
+
+    &__subtitle {
+        font: 700 #{rem(16)} / 140% var(--ff-base);
+        margin-bottom: rem(24);
+        color: var(--color-accent);
+    }
+
+    &__list {
+        display: flex;
+        flex-direction: column;
+        gap: rem(12);
+        margin-bottom: rem(24);
+        color: var(--color-wht);
+
+        li {
+            display: inline-flex;
+            align-items: center;
+            gap: rem(13);
+            font: 400 #{rem(16)} / 140% var(--ff-base);
+
+            &::before {
+                content: '';
+                display: inline-flex;
+                flex-shrink: 0;
+                width: rem(4);
+                height: rem(4);
+                border-radius: 50%;
+                background: var(--color-wht);
+            }
+        }
+    }
+
+    &__link {
+        width: 100%;
+        margin-top: rem(8);
+
+        @include media('tablet') {
+            max-width: rem(416);
+        }
+    }
+
+    &__bg {
+        display: none;
+        @include media('tablet') {
+            display: block;
+            position: absolute;
+            width: 100%;
+            top: calc(0px - var(--section-pdd));
+            object-fit: cover;
+        }
+    }
+}

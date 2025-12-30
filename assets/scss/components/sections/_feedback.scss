@@ -72,7 +72,13 @@
             }
         }
 
-        @media(min-width: 1650px) {
+        @include media('desktop') {
+            .feedback__container {
+                padding-inline: var(--section-pdd);
+            }
+        }
+
+        @media (min-width: 1650px) {
             .feedback__panel {
                 border-radius: rem(16);
             }

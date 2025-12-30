@@ -6,6 +6,14 @@
     overflow: hidden;
     padding-block: var(--section-pdd);
 
+    &:has(.video-preview) {
+        .decoration-chev {
+            &.thrd-el {
+                top: rem(950);
+            }
+        }
+    }
+
     &::after {
         content: '';
         position: absolute;
