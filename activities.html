@@ -5,10 +5,1111 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Legion | Activities</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap"
+        rel="stylesheet">
+    <!-- styles -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/ui@6.1/dist/fancybox/fancybox.css" />
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@12/swiper-bundle.min.css" />
+    <link rel="stylesheet" href="./assets/css/main.min.css">
+
+    <!-- scripts -->
+    <script src="https://cdn.jsdelivr.net/npm/@fancyapps/ui@6.1/dist/fancybox/fancybox.umd.js"></script>
+    <script defer src="https://cdn.jsdelivr.net/npm/swiper@12/swiper-bundle.min.js"></script>
+    <script defer src="./assets/scripts/mods/phoneInputHandler.js"></script>
+    <script defer src="./assets/scripts/mods/formHandler.js"></script>
+    <script defer src="./assets/scripts/mods/section-information.js"></script>
+    <script defer src="./assets/scripts/mods/section-seo.js"></script>
+    <script defer src="./assets/scripts/mods/section-contacts.js"></script>
+    <script defer src="./assets/scripts/main.js"></script>
 </head>
 
 <body>
+    <div class="mobile-menu js-mob-menu">
+        <button type="button" class="mobile-menu__close js-mob-close">
+            <svg width="32" height="32" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <rect x="0.000305176" y="2.83105" width="4" height="40" rx="2"
+                    transform="rotate(-45 0.000305176 2.83105)" fill="#FFD100" />
+                <rect x="2.82843" y="31.1123" width="4" height="40" rx="2" transform="rotate(-135 2.82843 31.1123)"
+                    fill="#FFD100" />
+            </svg>
+        </button>
+        <div class="container">
+            <div class="mobile-menu__head js-lang-portal">
+                <div class="mobile-menu__location js-location-menu">
+                    Оберіть регіон: <span>Київ</span>
+                    <div class="mobile-menu__city">
+                        <ul>
+                            <li><a href="javascript: void(0)">Київ</a></li>
+                            <li><a href="javascript: void(0)">Дніпро</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            <nav class="mobile-menu__nav">
+                <ul class="mobile-menu__list">
+                    <li>
+                        <a href="javascript: void(0)" class="js-submenu-trigger">локації</a>
+                        <div class="mobile-menu__routes js-submenu">
+                            <ul class="mobile-menu__submenu">
+                                <li>
+                                    <a href="javascript: void(0)">
+                                        <span class="fw-text">ТРЦ Dream Berry, Оболонь</span>
+                                        <span class="lght-text">вул. Маршала Тимошенка, 21</span>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="javascript: void(0)">
+                                        <span class="fw-text">ТЦ Олімпійський, центр</span>
+                                        <span class="lght-text">вул. Велика Васильківська, 72</span>
+                                    </a>
+                                </li>
+                            </ul>
+                        </div>
+                    </li>
+                    <li>
+                        <a href="javascript: void(0)" class="js-submenu-trigger">меню</a>
+                        <div class="mobile-menu__routes js-submenu">
+                            <ul class="mobile-menu__submenu">
+                                <li>
+                                    <a href="javascript: void(0)">
+                                        <span class="fw-text">Київ</span>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="javascript: void(0)">
+                                        <span class="fw-text">Дніпро</span>
+                                    </a>
+                                </li>
+                            </ul>
+                        </div>
+                    </li>
+                    <li>
+                        <a href="javascript: void(0)" class="js-submenu-trigger">послуги</a>
+                        <div class="mobile-menu__routes js-submenu">
+                            <ul class="mobile-menu__submenu">
+                                <li>
+                                    <a href="javascript: void(0)">
+                                        <span class="fw-text">Дитячий День Народження</span>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="javascript: void(0)">
+                                        <span class="fw-text">Лазертаг</span>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="javascript: void(0)">
+                                        <span class="fw-text">Корпоратив</span>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="javascript: void(0)">
+                                        <span class="fw-text">Пейнбол</span>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="javascript: void(0)">
+                                        <span class="fw-text">Бункер</span>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="javascript: void(0)">
+                                        <span class="fw-text">Лабіринт</span>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="javascript: void(0)">
+                                        <span class="fw-text">Мафія</span>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="javascript: void(0)">
+                                        <span class="fw-text">Квадроцикли</span>
+                                    </a>
+                                </li>
+                            </ul>
+                        </div>
+                    </li>
+                    <li><a href="javascript: void(0)">про нас</a></li>
+                    <li><a href="javascript: void(0)">блог</a></li>
+                    <li><a href="javascript: void(0)">контакти</a></li>
+                </ul>
+            </nav>
+            <ul class="lang-switcher js-lang-menu">
+                <li class="lang-switcher__current">
+                    <span class="lang-switcher__label" lang="uk">UA</span>
+                    <ul class="lang-switcher__list">
+                        <li class="lang-switcher__item lang-switcher__item--active">
+                            <span class="lang-switcher__link" lang="uk">
+                                UA
+                            </span>
+                        </li>
+                        <li class="lang-switcher__item">
+                            <a class="lang-switcher__link" href="javascript: void(0)" lang="en">
+                                EN
+                            </a>
+                        </li>
+                    </ul>
+                </li>
+            </ul>
+            <div class="mobile-menu__contacts">
+                <div class="mobile-menu__phones">
+                    <a href="tel:+380673000000">+380 67 300 00 00</a>
+                    <a href="tel:+380673000000">+380 67 300 00 00</a>
+                </div>
+                <ul class="mobile-menu__message">
+                    <li>
+                        <a href="javascript: void(0)" target="_blank">
+                            <img width="40" height="40" src="./assets/images/icons/ico-telegram.svg" alt="Telegram">
+                        </a>
+                    </li>
+                    <li>
+                        <a href="javascript: void(0)" target="_blank">
+                            <img width="40" height="40" src="./assets/images/icons/ico-viber.svg" alt="Viber">
+                        </a>
+                    </li>
+                    <li>
+                        <a href="javascript: void(0)" target="_blank">
+                            <img width="40" height="40" src="./assets/images/icons/ico-wats.svg" alt="WatsUp">
+                        </a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </div>
+    <header class="header js-header">
+        <div class="container js-laptop-container">
+            <div class="header__controls">
+                <div class="header__inner">
+                    <a href="index.html" class="header__logo">
+                        <img width="70" height="56" src="./assets/images/icons/logo.png" alt="Logo">
+                    </a>
+                </div>
+                <div class="header__panel">
+                    <button type="button" class="header__btn js-menu-trigger">
+                        <span>
+                            <svg width="26" height="26" viewBox="0 0 26 26" fill="none"
+                                xmlns="http://www.w3.org/2000/svg">
+                                <g clip-path="url(#clip0_3023_236)">
+                                    <path
+                                        d="M22.0548 11.9717C24.2262 11.9651 25.9868 10.173 26 7.95641V4.02746C25.9868 1.80883 24.2282 0.0132027 22.0548 0H18.2061C16.0347 0.01371 14.2792 1.81086 14.2731 4.02746V7.95641C14.2731 10.174 16.0337 11.9717 18.2061 11.9717H22.0548ZM5.52551 11.9717C5.72469 11.9927 5.92573 11.9566 6.10514 11.8676C6.28454 11.7786 6.43489 11.6403 6.5386 11.4689C6.64446 11.2958 6.70048 11.0968 6.70048 10.8938C6.70048 10.6909 6.64446 10.4919 6.5386 10.3188C6.43489 10.1474 6.28454 10.0091 6.10514 9.92012C5.92573 9.83109 5.72469 9.79498 5.52551 9.81602H3.9452C2.93719 9.81602 2.11708 8.98574 2.11149 7.95641V4.07672C2.13688 3.05602 2.94532 2.23641 3.9452 2.21711H7.82032C8.0615 2.21582 8.30049 2.26298 8.5231 2.35579C8.74572 2.44861 8.94742 2.58518 9.11626 2.75742C9.462 3.10979 9.65518 3.58407 9.65403 4.07773V9.90234L9.63778 10.0471C9.62858 10.2368 9.66909 10.4256 9.75531 10.5948C9.84153 10.7641 9.97046 10.9078 10.1293 11.0119C10.3075 11.1276 10.5166 11.1863 10.729 11.18C10.9413 11.1738 11.1466 11.1029 11.3176 10.9769C11.4905 10.8485 11.6217 10.6721 11.6949 10.4696C11.768 10.2671 11.7799 10.0476 11.729 9.83836V4.03965C11.729 1.81543 9.96278 0.012188 7.78376 0.012188H3.9452C1.78497 0.0578899 0.0446931 1.83473 5.6465e-06 4.03965V7.95641C-0.00176593 9.01915 0.413397 10.0402 1.15629 10.8002C1.51954 11.1716 1.95341 11.4665 2.43237 11.6677C2.91133 11.8689 3.4257 11.9723 3.9452 11.9717H5.52551ZM22.0548 9.81602H18.2061C17.2001 9.81602 16.3841 8.98371 16.3841 7.95641V4.02746C16.3798 3.53467 16.5703 3.06013 16.9142 2.70715C17.0822 2.5348 17.2831 2.39807 17.5051 2.30515C17.727 2.21223 17.9655 2.16501 18.2061 2.16633H22.0548C22.2954 2.16504 22.5339 2.21227 22.7558 2.30519C22.9778 2.39811 23.1787 2.53482 23.3467 2.70715C23.6906 3.06013 23.8811 3.53467 23.8768 4.02746V7.95641C23.8774 8.44766 23.6858 8.91966 23.3431 9.27164C23.1755 9.4436 22.9751 9.58034 22.7539 9.67382C22.5327 9.7673 22.295 9.81565 22.0548 9.81602ZM22.0548 26C24.21 25.9492 25.9431 24.1719 25.9878 21.9725V18.0558C26.0027 16.9952 25.6017 15.9709 24.8706 15.2024C24.5132 14.8265 24.0844 14.5258 23.6092 14.3178C23.1341 14.1098 22.6222 13.9988 22.1036 13.9913H20.5106C20.2485 14.025 20.0077 14.153 19.8333 14.3514C19.6588 14.5497 19.5625 14.8049 19.5625 15.0691C19.5625 15.3333 19.6588 15.5884 19.8333 15.7868C20.0077 15.9852 20.2485 16.1132 20.5106 16.1469H22.0548C22.2975 16.1487 22.5375 16.1993 22.7603 16.2955C22.9832 16.3917 23.1845 16.5316 23.3523 16.707C23.6955 17.0662 23.8837 17.5459 23.8763 18.0426V21.9725C23.8636 22.9943 23.0547 23.8164 22.0548 23.8321H18.2061C17.2001 23.8321 16.3841 22.9998 16.3841 21.9725V16.0977L16.3719 15.9626C16.3341 15.7051 16.2048 15.4699 16.0076 15.3002C15.8104 15.1304 15.5586 15.0374 15.2984 15.0384C15.1589 15.0419 15.0216 15.0734 14.8946 15.1311C14.7676 15.1888 14.6534 15.2714 14.559 15.374C14.365 15.5842 14.2622 15.8626 14.2731 16.1484V21.9725C14.2678 23.0353 14.6799 24.0578 15.4207 24.8198C15.7828 25.1925 16.2157 25.4889 16.6941 25.6915C17.1725 25.8942 17.6866 25.9991 18.2061 26L22.0548 26ZM7.79391 26C9.96989 25.9934 11.7305 24.1942 11.7391 21.9725V18.0436C11.7409 16.9808 11.3257 15.9598 10.5828 15.1998C10.2196 14.8284 9.78574 14.5334 9.30678 14.3322C8.82781 14.131 8.31342 14.0277 7.79391 14.0283H3.9452C1.7738 14.0349 0.0132088 15.827 5.6465e-06 18.0436V21.9725C0.0132088 24.1912 1.77176 25.9868 3.9452 26H7.79391ZM7.79391 23.8321H3.9452C3.70202 23.8368 3.46042 23.7922 3.23498 23.7009C3.00954 23.6096 2.80493 23.4735 2.63352 23.301C2.28263 22.948 2.08612 22.4702 2.08711 21.9725V18.0436C2.08189 17.7941 2.12634 17.546 2.21788 17.3139C2.30942 17.0817 2.44622 16.8701 2.62032 16.6913C2.79239 16.5151 2.99871 16.3761 3.22657 16.2827C3.45443 16.1894 3.699 16.1437 3.9452 16.1484H7.79391C8.03628 16.1503 8.27583 16.2006 8.49841 16.2966C8.72099 16.3925 8.9221 16.5321 9.08985 16.707C9.43304 17.0662 9.62142 17.5458 9.61442 18.0426V21.9725C9.60782 22.9968 8.79583 23.8255 7.79239 23.8321H7.79391Z"
+                                        fill="#FFD100" />
+                                </g>
+                                <defs>
+                                    <clipPath id="clip0_3023_236">
+                                        <rect width="26" height="26" fill="white" transform="matrix(1 0 0 -1 0 26)" />
+                                    </clipPath>
+                                </defs>
+                            </svg>
+                        </span>
+                        <span>меню</span>
+                    </button>
+                    <a href="javascript: void(0)" class="header__phone js-modal-trigger">
+                        <img width="35" height="35" src="./assets/images/icons/ico-phone.svg" alt="Call">
+                    </a>
+                    <button type="button" class="header__call js-modal-trigger">
+                        зворотній дзвінок
+                    </button>
+                </div>
+            </div>
+            <div class="header__bot">
+                <div class="header__location js-location-menu">
+                    Оберіть регіон: <span>Київ</span>
+                    <div class="header__city">
+                        <ul>
+                            <li><a href="javascript: void(0)">Київ</a></li>
+                            <li><a href="javascript: void(0)">Дніпро</a></li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="header__numbers">
+                    <a href="tel:+380673000000" class="header__number">+380 67 300 00 00</a>
+                    <a href="tel:+380673000000" class="header__number">+380 67 300 00 00</a>
+                </div>
+                <ul class="lang-switcher js-lang-menu">
+                    <li class="lang-switcher__current">
+                        <span class="lang-switcher__label" lang="uk">UA</span>
+                        <ul class="lang-switcher__list">
+                            <li class="lang-switcher__item lang-switcher__item--active">
+                                <span class="lang-switcher__link" lang="uk">
+                                    UA
+                                </span>
+                            </li>
+                            <li class="lang-switcher__item">
+                                <a class="lang-switcher__link" href="javascript: void(0)" lang="en">
+                                    EN
+                                </a>
+                            </li>
+                        </ul>
+                    </li>
+                </ul>
+                <nav class="header__nav">
+                    <ul class="header__menu">
+                        <li>
+                            <a href="javascript: void(0)">локації</a>
+                            <div class="header__dd header__dd--locations">
+                                <ul>
+                                    <li>
+                                        <a href="javascript: void(0)">
+                                            <span class="fw-text">ТРЦ Dream Berry, Оболонь</span>
+                                            <span class="lght-text">вул. Маршала Тимошенка, 21</span>
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="javascript: void(0)">
+                                            <span class="fw-text">ТРЦ Dream Berry, Оболонь</span>
+                                            <span class="lght-text">вул. Маршала Тимошенка, 21</span>
+                                        </a>
+                                    </li>
+                                </ul>
+                            </div>
+                        </li>
+                        <li>
+                            <a href="javascript: void(0)">меню</a>
+                            <div class="header__dd header__dd--menu">
+                                <ul>
+                                    <li>
+                                        <a href="javascript: void(0)">
+                                            <span class="fw-text">Київ</span>
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="javascript: void(0)">
+                                            <span class="fw-text">Дніпро</span>
+                                        </a>
+                                    </li>
+                                </ul>
+                            </div>
+                        </li>
+                        <li>
+                            <a href="javascript: void(0)">послуги</a>
+                            <div class="header__dd header__dd--services">
+                                <ul>
+                                    <li>
+                                        <a href="javascript: void(0)">
+                                            <span class="fw-text">Дитячий День Народження</span>
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="javascript: void(0)">
+                                            <span class="fw-text">Лазертаг</span>
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="javascript: void(0)">
+                                            <span class="fw-text">Корпоратив</span>
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="javascript: void(0)">
+                                            <span class="fw-text">Пейнбол</span>
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="javascript: void(0)">
+                                            <span class="fw-text">Бункер</span>
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="javascript: void(0)">
+                                            <span class="fw-text">Лабіринт</span>
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="javascript: void(0)">
+                                            <span class="fw-text">Мафія</span>
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="javascript: void(0)">
+                                            <span class="fw-text">Квадроцикли</span>
+                                        </a>
+                                    </li>
+                                </ul>
+                            </div>
+                        </li>
+                        <li>
+                            <a href="javascript: void(0)">про нас</a>
+                        </li>
+                        <li>
+                            <a href="javascript: void(0)">блог</a>
+                        </li>
+                        <li>
+                            <a href="javascript: void(0)">контакти</a>
+                        </li>
+                    </ul>
+                </nav>
+            </div>
+        </div>
+    </header>
+    <main class="main">
+        <section class="hero-video">
+            <div class="container">
+                <div class="hero-video__content">
+                    <div class="hero-video__box">
+                        <div class="videos-box js-video-item" data-video="./assets/videos/stress.mp4">
+                            <img width="288" height="163" loading="lazy" src="./assets/images/hero-video.jpg"
+                                alt="Thumbnail">
+                            <div class="videos-box__rec">
+                                <svg width="22" height="24" viewBox="0 0 22 24" fill="none"
+                                    xmlns="http://www.w3.org/2000/svg">
+                                    <path
+                                        d="M3.91795 0.529181C1.75422 -0.711968 0 0.304797 0 2.79837V21.1999C0 23.6959 1.75422 24.7114 3.91795 23.4714L20.0018 14.2474C22.1663 13.0059 22.1663 10.9943 20.0018 9.753L3.91795 0.529181Z"
+                                        fill="#FFD100" />
+                                </svg>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="hero-video__info">
+                        <h1 class="hero-video__title"><span>ЛАЗЕРТАГ</span> З СУПЕРГЕРОЄМ</h1>
+                        <p class="hero-video__subtitle">
+                            Як перетворити на яскравий шоу-екшн лазерні бої? Київ, зустрічайте інопланетного Хижака!
+                        </p>
+                        <p class="hero-video__text">
+                            Лазерні бої з Хижаком – це інноваційна розвага з повним зануренням у фантастичну реальність.
+                            Як у звичайній грі laser tag, гравці споряджаються тагерами та сенсорними пов'язками.
+                        </p>
+                        <a href="javascript: void(0)" class="hero-video__link cta cta--accent js-modal-trigger">
+                            забронювати дату
+                        </a>
+                    </div>
+                </div>
+            </div>
+            <div class="container">
+                <div class="gallery-content">
+                    <h2 class="gallery-content__title content-title mobile--visible">
+                        погляньте <span>ближче</span>
+                    </h2>
+                    <div class="gallery-content__inner">
+                        <div class="gallery-content__panel">
+                            <h2 class="gallery-content__title content-title mobile--hidden">
+                                погляньте <span>ближче</span>
+                            </h2>
+                            <div class="slider-controls mobile--hidden">
+                                <button type="button" class="slider-controls__btn btn-prev js-gallery-prev">
+                                    <svg width="16" height="23" viewBox="0 0 16 23" fill="none"
+                                        xmlns="http://www.w3.org/2000/svg">
+                                        <path
+                                            d="M14.6379 2.81159C15.3615 2.17184 15.3615 1.0429 14.6379 0.403152C14.0299 -0.134365 13.1166 -0.134365 12.5086 0.403154L-8.58275e-07 11.4619L12.5086 22.5207C13.1166 23.0582 14.0299 23.0582 14.6379 22.5207C15.3615 21.8809 15.3615 20.752 14.6379 20.1122L6.5483 12.9603C5.64791 12.1643 5.64791 10.7596 6.5483 9.96353L14.6379 2.81159Z"
+                                            fill="#FFD100" />
+                                    </svg>
+                                </button>
+                                <div class="slider-controls__pagination js-gallery-pagination"></div>
+                                <button type="button" class="slider-controls__btn btn-next js-gallery-next">
+                                    <svg width="16" height="23" viewBox="0 0 16 23" fill="none"
+                                        xmlns="http://www.w3.org/2000/svg">
+                                        <path
+                                            d="M0.542698 20.1122C-0.180928 20.752 -0.180928 21.8809 0.542697 22.5207C1.15069 23.0582 2.06398 23.0582 2.67197 22.5207L15.1806 11.4619L2.67198 0.403152C2.06399 -0.134365 1.15069 -0.134367 0.542701 0.403151C-0.180924 1.0429 -0.180925 2.17184 0.5427 2.81159L8.6323 9.96353C9.53269 10.7596 9.53269 12.1643 8.6323 12.9603L0.542698 20.1122Z"
+                                            fill="#FFD100" />
+                                    </svg>
+                                </button>
+                            </div>
+                            <div class="slider-controls mobile--visible">
+                                <button type="button" class="slider-controls__btn btn-prev js-gallery-prev-mob">
+                                    <svg width="16" height="23" viewBox="0 0 16 23" fill="none"
+                                        xmlns="http://www.w3.org/2000/svg">
+                                        <path
+                                            d="M14.6379 2.81159C15.3615 2.17184 15.3615 1.0429 14.6379 0.403152C14.0299 -0.134365 13.1166 -0.134365 12.5086 0.403154L-8.58275e-07 11.4619L12.5086 22.5207C13.1166 23.0582 14.0299 23.0582 14.6379 22.5207C15.3615 21.8809 15.3615 20.752 14.6379 20.1122L6.5483 12.9603C5.64791 12.1643 5.64791 10.7596 6.5483 9.96353L14.6379 2.81159Z"
+                                            fill="#FFD100" />
+                                    </svg>
+                                </button>
+                                <div class="slider-controls__pagination js-gallery-pagination-mob"></div>
+                                <button type="button" class="slider-controls__btn btn-next js-gallery-next-mob">
+                                    <svg width="16" height="23" viewBox="0 0 16 23" fill="none"
+                                        xmlns="http://www.w3.org/2000/svg">
+                                        <path
+                                            d="M0.542698 20.1122C-0.180928 20.752 -0.180928 21.8809 0.542697 22.5207C1.15069 23.0582 2.06398 23.0582 2.67197 22.5207L15.1806 11.4619L2.67198 0.403152C2.06399 -0.134365 1.15069 -0.134367 0.542701 0.403151C-0.180924 1.0429 -0.180925 2.17184 0.5427 2.81159L8.6323 9.96353C9.53269 10.7596 9.53269 12.1643 8.6323 12.9603L0.542698 20.1122Z"
+                                            fill="#FFD100" />
+                                    </svg>
+                                </button>
+                            </div>
+                        </div>
+                        <div class="gallery-content__slider swiper js-gallery-slider-mob">
+                            <div class="gallery-content__wrapper swiper-wrapper">
+                                <a href="./assets/images/gall_1.jpg" data-fancybox="gallery-mob"
+                                    class="gallery-content__slide swiper-slide">
+                                    <div class="gallery-box">
+                                        <img src="./assets/images/gall_1.jpg" alt="Thumbnail">
+                                    </div>
+                                </a>
+                                <a href="./assets/images/gall_2.jpg" data-fancybox="gallery-mob"
+                                    class="gallery-content__slide swiper-slide">
+                                    <div class="gallery-box">
+                                        <img src="./assets/images/gall_2.jpg" alt="Thumbnail">
+                                    </div>
+                                </a>
+                                <a href="./assets/images/gall_3.jpg" data-fancybox="gallery-mob"
+                                    class="gallery-content__slide swiper-slide">
+                                    <div class="gallery-box">
+                                        <img src="./assets/images/gall_3.jpg" alt="Thumbnail">
+                                    </div>
+                                </a>
+                                <a href="./assets/images/gall_4.jpg" data-fancybox="gallery-mob"
+                                    class="gallery-content__slide swiper-slide">
+                                    <div class="gallery-box">
+                                        <img src="./assets/images/gall_4.jpg" alt="Thumbnail">
+                                    </div>
+                                </a>
+                                <a href="./assets/images/gall_5.jpg" data-fancybox="gallery-mob"
+                                    class="gallery-content__slide swiper-slide">
+                                    <div class="gallery-box">
+                                        <img src="./assets/images/gall_5.jpg" alt="Thumbnail">
+                                    </div>
+                                </a>
+                                <a href="./assets/images/gall_6.jpg" data-fancybox="gallery-mob"
+                                    class="gallery-content__slide swiper-slide">
+                                    <div class="gallery-box">
+                                        <img src="./assets/images/gall_6.jpg" alt="Thumbnail">
+                                    </div>
+                                </a>
+                                <a href="./assets/images/gall_7.jpg" data-fancybox="gallery-mob"
+                                    class="gallery-content__slide swiper-slide">
+                                    <div class="gallery-box">
+                                        <img src="./assets/images/gall_7.jpg" alt="Thumbnail">
+                                    </div>
+                                </a>
+                            </div>
+                        </div>
+                        <div class="gallery-content__slider swiper js-gallery-slider">
+                            <div class="gallery-content__wrapper swiper-wrapper">
+                                <div class="gallery-content__slide swiper-slide">
+                                    <div class="row row--sm">
+                                        <a href="./assets/images/gall_1.jpg" data-fancybox="gallery">
+                                            <div class="gallery-box">
+                                                <img src="./assets/images/gall_1.jpg" alt="Thumbnail">
+                                            </div>
+                                        </a>
+                                        <a href="./assets/images/gall_2.jpg" data-fancybox="gallery">
+                                            <div class="gallery-box">
+                                                <img src="./assets/images/gall_2.jpg" alt="Thumbnail">
+                                            </div>
+                                        </a>
+                                        <a href="./assets/images/gall_3.jpg" data-fancybox="gallery">
+                                            <div class="gallery-box">
+                                                <img src="./assets/images/gall_3.jpg" alt="Thumbnail">
+                                            </div>
+                                        </a>
+                                        <a href="./assets/images/gall_4.jpg" data-fancybox="gallery">
+                                            <div class="gallery-box">
+                                                <img src="./assets/images/gall_4.jpg" alt="Thumbnail">
+                                            </div>
+                                        </a>
+                                    </div>
+                                    <div class="row row--lg">
+                                        <a href="./assets/images/gall_5.jpg" data-fancybox="gallery">
+                                            <div class="gallery-box">
+                                                <img src="./assets/images/gall_5.jpg" alt="Thumbnail">
+                                            </div>
+                                        </a>
+                                        <a href="./assets/images/gall_5.jpg" data-fancybox="gallery">
+                                            <div class="gallery-box">
+                                                <img src="./assets/images/gall_5.jpg" alt="Thumbnail">
+                                            </div>
+                                        </a>
+                                        <a href="./assets/images/gall_6.jpg" data-fancybox="gallery">
+                                            <div class="gallery-box">
+                                                <img src="./assets/images/gall_6.jpg" alt="Thumbnail">
+                                            </div>
+                                        </a>
+                                        <a href="./assets/images/gall_7.jpg" data-fancybox="gallery">
+                                            <div class="gallery-box">
+                                                <img src="./assets/images/gall_7.jpg" alt="Thumbnail">
+                                            </div>
+                                        </a>
+                                    </div>
+                                    <div class="row row--sm">
+                                        <a href="./assets/images/gall_1.jpg" data-fancybox="gallery">
+                                            <div class="gallery-box">
+                                                <img src="./assets/images/gall_1.jpg" alt="Thumbnail">
+                                            </div>
+                                        </a>
+                                        <a href="./assets/images/gall_2.jpg" data-fancybox="gallery">
+                                            <div class="gallery-box">
+                                                <img src="./assets/images/gall_2.jpg" alt="Thumbnail">
+                                            </div>
+                                        </a>
+                                        <a href="./assets/images/gall_3.jpg" data-fancybox="gallery">
+                                            <div class="gallery-box">
+                                                <img src="./assets/images/gall_3.jpg" alt="Thumbnail">
+                                            </div>
+                                        </a>
+                                        <a href="./assets/images/gall_4.jpg" data-fancybox="gallery">
+                                            <div class="gallery-box">
+                                                <img src="./assets/images/gall_4.jpg" alt="Thumbnail">
+                                            </div>
+                                        </a>
+                                    </div>
+                                </div>
+                                <div class="gallery-content__slide swiper-slide">
+                                    <div class="row row--sm">
+                                        <a href="./assets/images/gall_1.jpg" data-fancybox="gallery">
+                                            <div class="gallery-box">
+                                                <img src="./assets/images/gall_1.jpg" alt="Thumbnail">
+                                            </div>
+                                        </a>
+                                        <a href="./assets/images/gall_2.jpg" data-fancybox="gallery">
+                                            <div class="gallery-box">
+                                                <img src="./assets/images/gall_2.jpg" alt="Thumbnail">
+                                            </div>
+                                        </a>
+                                        <a href="./assets/images/gall_3.jpg" data-fancybox="gallery">
+                                            <div class="gallery-box">
+                                                <img src="./assets/images/gall_3.jpg" alt="Thumbnail">
+                                            </div>
+                                        </a>
+                                        <a href="./assets/images/gall_4.jpg" data-fancybox="gallery">
+                                            <div class="gallery-box">
+                                                <img src="./assets/images/gall_4.jpg" alt="Thumbnail">
+                                            </div>
+                                        </a>
+                                    </div>
+                                    <div class="row row--lg">
+                                        <a href="./assets/images/gall_5.jpg" data-fancybox="gallery">
+                                            <div class="gallery-box">
+                                                <img src="./assets/images/gall_5.jpg" alt="Thumbnail">
+                                            </div>
+                                        </a>
+                                        <a href="./assets/images/gall_6.jpg" data-fancybox="gallery">
+                                            <div class="gallery-box">
+                                                <img src="./assets/images/gall_6.jpg" alt="Thumbnail">
+                                            </div>
+                                        </a>
+                                        <a href="./assets/images/gall_7.jpg" data-fancybox="gallery">
+                                            <div class="gallery-box">
+                                                <img src="./assets/images/gall_7.jpg" alt="Thumbnail">
+                                            </div>
+                                        </a>
+                                    </div>
+                                    <div class="row row--sm">
+                                        <a href="./assets/images/gall_1.jpg" data-fancybox="gallery">
+                                            <div class="gallery-box">
+                                                <img src="./assets/images/gall_1.jpg" alt="Thumbnail">
+                                            </div>
+                                        </a>
+                                        <a href="./assets/images/gall_2.jpg" data-fancybox="gallery">
+                                            <div class="gallery-box">
+                                                <img src="./assets/images/gall_2.jpg" alt="Thumbnail">
+                                            </div>
+                                        </a>
+                                        <a href="./assets/images/gall_3.jpg" data-fancybox="gallery">
+                                            <div class="gallery-box">
+                                                <img src="./assets/images/gall_3.jpg" alt="Thumbnail">
+                                            </div>
+                                        </a>
+                                        <a href="./assets/images/gall_4.jpg" data-fancybox="gallery">
+                                            <div class="gallery-box">
+                                                <img src="./assets/images/gall_4.jpg" alt="Thumbnail">
+                                            </div>
+                                        </a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <img src="./assets/images/toys-decoration.png" alt="" class="hero-video__bg">
+            <div class="decoration-chev frst-el">
+                <img src="./assets/images/icons/chevron-r-col.svg" alt="">
+            </div>
+            <div class="decoration-chev scnd-el">
+                <img src="./assets/images/icons/chevron-l-col.svg" alt="">
+            </div>
+        </section>
+        <section class="tops section--yellow">
+            <div class="container">
+                <div class="videos-content">
+                    <h2 class="videos-content__title content-title mobile--visible">
+                        ТОП-ВІДЕО
+                    </h2>
+                    <div class="videos-content__inner">
+                        <div class="videos-content__panel">
+                            <h2 class="videos-content__title content-title mobile--hidden">
+                                ТОП-ВІДЕО
+                            </h2>
+                            <div class="slider-controls slider-controls--light">
+                                <button type="button" class="slider-controls__btn btn-prev js-videos-prev">
+                                    <svg width="16" height="23" viewBox="0 0 16 23" fill="none"
+                                        xmlns="http://www.w3.org/2000/svg">
+                                        <path
+                                            d="M14.6379 2.81159C15.3615 2.17184 15.3615 1.0429 14.6379 0.403152C14.0299 -0.134365 13.1166 -0.134365 12.5086 0.403154L-8.58275e-07 11.4619L12.5086 22.5207C13.1166 23.0582 14.0299 23.0582 14.6379 22.5207C15.3615 21.8809 15.3615 20.752 14.6379 20.1122L6.5483 12.9603C5.64791 12.1643 5.64791 10.7596 6.5483 9.96353L14.6379 2.81159Z"
+                                            fill="#FFD100" />
+                                    </svg>
+                                </button>
+                                <div class="slider-controls__pagination js-videos-pagination"></div>
+                                <button type="button" class="slider-controls__btn btn-next js-videos-next">
+                                    <svg width="16" height="23" viewBox="0 0 16 23" fill="none"
+                                        xmlns="http://www.w3.org/2000/svg">
+                                        <path
+                                            d="M0.542698 20.1122C-0.180928 20.752 -0.180928 21.8809 0.542697 22.5207C1.15069 23.0582 2.06398 23.0582 2.67197 22.5207L15.1806 11.4619L2.67198 0.403152C2.06399 -0.134365 1.15069 -0.134367 0.542701 0.403151C-0.180924 1.0429 -0.180925 2.17184 0.5427 2.81159L8.6323 9.96353C9.53269 10.7596 9.53269 12.1643 8.6323 12.9603L0.542698 20.1122Z"
+                                            fill="#FFD100" />
+                                    </svg>
+                                </button>
+                            </div>
+                        </div>
+                        <div class="videos-content__slider swiper js-videos-slider">
+                            <div class="videos-content__wrapper swiper-wrapper">
+                                <div class="videos-content__slide swiper-slide">
+                                    <div class="videos-box js-video-item" data-video="./assets/videos/stress.mp4">
+                                        <img width="288" height="163" loading="lazy" src="./assets/images/videos_1.jpg"
+                                            alt="Thumbnail">
+                                        <div class="videos-box__rec">
+                                            <svg width="22" height="24" viewBox="0 0 22 24" fill="none"
+                                                xmlns="http://www.w3.org/2000/svg">
+                                                <path
+                                                    d="M3.91795 0.529181C1.75422 -0.711968 0 0.304797 0 2.79837V21.1999C0 23.6959 1.75422 24.7114 3.91795 23.4714L20.0018 14.2474C22.1663 13.0059 22.1663 10.9943 20.0018 9.753L3.91795 0.529181Z"
+                                                    fill="#FFD100" />
+                                            </svg>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="videos-content__slide swiper-slide">
+                                    <div class="videos-box js-video-item" data-video="./assets/videos/waves.mp4">
+                                        <img width="288" height="163" loading="lazy" src="./assets/images/videos_2.jpg"
+                                            alt="Thumbnail">
+                                        <div class="videos-box__rec">
+                                            <svg width="22" height="24" viewBox="0 0 22 24" fill="none"
+                                                xmlns="http://www.w3.org/2000/svg">
+                                                <path
+                                                    d="M3.91795 0.529181C1.75422 -0.711968 0 0.304797 0 2.79837V21.1999C0 23.6959 1.75422 24.7114 3.91795 23.4714L20.0018 14.2474C22.1663 13.0059 22.1663 10.9943 20.0018 9.753L3.91795 0.529181Z"
+                                                    fill="#FFD100" />
+                                            </svg>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="videos-content__slide swiper-slide">
+                                    <div class="videos-box js-video-item" data-video="./assets/videos/waves.mp4">
+                                        <img width="288" height="163" loading="lazy" src="./assets/images/videos_3.jpg"
+                                            alt="Thumbnail">
+                                        <div class="videos-box__rec">
+                                            <svg width="22" height="24" viewBox="0 0 22 24" fill="none"
+                                                xmlns="http://www.w3.org/2000/svg">
+                                                <path
+                                                    d="M3.91795 0.529181C1.75422 -0.711968 0 0.304797 0 2.79837V21.1999C0 23.6959 1.75422 24.7114 3.91795 23.4714L20.0018 14.2474C22.1663 13.0059 22.1663 10.9943 20.0018 9.753L3.91795 0.529181Z"
+                                                    fill="#FFD100" />
+                                            </svg>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="videos-content__slide swiper-slide">
+                                    <div class="videos-box js-video-item" data-video="./assets/videos/waves.mp4">
+                                        <img width="288" height="163" loading="lazy" src="./assets/images/videos_3.jpg"
+                                            alt="Thumbnail">
+                                        <div class="videos-box__rec">
+                                            <svg width="22" height="24" viewBox="0 0 22 24" fill="none"
+                                                xmlns="http://www.w3.org/2000/svg">
+                                                <path
+                                                    d="M3.91795 0.529181C1.75422 -0.711968 0 0.304797 0 2.79837V21.1999C0 23.6959 1.75422 24.7114 3.91795 23.4714L20.0018 14.2474C22.1663 13.0059 22.1663 10.9943 20.0018 9.753L3.91795 0.529181Z"
+                                                    fill="#FFD100" />
+                                            </svg>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="decoration-chev frst-el">
+                <img src="./assets/images/icons/chevron-r-wht.svg" alt="">
+            </div>
+        </section>
+        <section class="feedback feedback--drk">
+            <div class="container">
+                <div class="feedback__content">
+                    <h2 class="feedback__title content-title">допомогти з вибором?</h2>
+                    <p class="feedback__subtitle">Залиште Ваш номер — ми зателефонуємо ≤ 15 хв</p>
+                    <div class="feedback__container">
+                        <div class="feedback__panel">
+                            <form class="feedback__form feedback__form--lg">
+                                <div class="feedback__form-field field-name">
+                                    <input placeholder="Ім’я" type="text" name="feedbackNamw" id="feedbackNamw">
+                                </div>
+                                <div class="feedback__form-field field-phone">
+                                    <input placeholder="+38 ( _ ) ___ __ __" type="tel" name="feedbackPhone"
+                                        id="feedbackPhone" inputmode="numeric" class="js-phone-field">
+                                </div>
+                                <button type="submit" class="feedback__form-submit cta cta--accent">
+                                    передзвоніть мені
+                                </button>
+                            </form>
+                        </div>
+                    </div>
+                    <div class="decoration-wrapper">
+                        <div class="decoration-chev frst-el">
+                            <img src="./assets/images/icons/chevron-r-wht.svg" alt="">
+                        </div>
+                        <div class="decoration-chev scnd-el">
+                            <img src="./assets/images/icons/chevron-l-wht.svg" alt="">
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <section class="seo shadows">
+            <img src="./assets/images/bg-gradient.jpg" alt="" class="seo__bg">
+            <div class="container">
+                <div class="seo__head">
+                    <h2 class="seo__title content-title">Структурований SEO текст</h2>
+                    <p class="seo__descr">
+                        Мрії та бажання маленького іменинника — наш закон!Запитайте, чого він хоче, и ми — втілимо це!
+                    </p>
+                </div>
+                <div class="seo__content container-flex">
+                    <div>
+                        <p>Для НАЙКРАЩОГО дитячого дня народження ми підготували:</p>
+                        <ul>
+                            <li>
+                                Інноваційні атракціони: лазертаг із супергероєм, бункер, кнопкові бої, лазерні бої та
+                                дзеркальні
+                                лабіринти, інтерактивні тири.
+                            </li>
+                            <li>Вітання від супергероя!</li>
+                            <li>Тематичні дні народження у стилі гри АМОНГ АС.</li>
+                            <li>
+                                Унікальні квести, веселі ігри, феєричні паперові шоу, містичні «Хованки у темряві».
+                            </li>
+                            <li>
+                                Ді-джеї, ведучі та аніматори із досвідом, натхненням, драйвом.
+                                Піньяти з цукерками та конфетті.
+                            </li>
+                            <li>Прикраса зони відпочинку та ефектні фотозони.</li>
+                            <li>Солодкий candy bar, святкове меню.</li>
+                            <li>Можливість закрити комплекс під ваше свято!</li>
+                            <li>
+                                Суперсервіс із турботою про кожну секунду найкращого дня в році.
+                            </li>
+                        </ul>
 
+                        <p>Іменинник буде щасливий, а його гості у захваті. Гарантуємо!</p>
+                    </div>
+                    <div>
+                        <p>
+                            Дитячі дні народження у Києві
+                            Як зробити день народження дитини незабутньою? Для агентства з організації дитячих свят у
+                            Києві
+                            1 Legion мрії та бажання іменинника — це закон! Тож ми всі продумали за вас.
+                        </p>
+                        <p>
+                            Лазертаг із
+                            супергероєм, <a href="javascript: void(0)">лазерні бої</a>, квест Амонґ ас, паперове шоу,
+                            піньята з цукерками та конфетті —
+                            підберемо розваги на ваш смак та запропонуємо готові ексклюзивні програми на будь-який
+                            бюджет.
+                        </p>
+                        <p>
+                            Ви зможете відзначити день народження дитини у Києві з персональним привітанням
+                            супергероя, кенді-баром, ді-джеєм та іншими цікавостями.
+                        </p>
+
+                        <p>
+                            У центрі дитячих розваг «Перший
+                            Легіон» іменинник та гості ЗАВЖДИ щасливі!
+                        </p>
+                    </div>
+                </div>
+                <div class="seo__content container-hidden js-seo-hidden container-flex">
+                    <div>
+                        <p>Для НАЙКРАЩОГО дитячого дня народження ми підготували:</p>
+                        <ul>
+                            <li>
+                                Інноваційні атракціони: лазертаг із супергероєм, бункер, кнопкові бої, лазерні бої та
+                                дзеркальні
+                                лабіринти, інтерактивні тири.
+                            </li>
+                            <li>Вітання від супергероя!</li>
+                            <li>Тематичні дні народження у стилі гри АМОНГ АС.</li>
+                            <li>
+                                Унікальні квести, веселі ігри, феєричні паперові шоу, містичні «Хованки у темряві».
+                            </li>
+                            <li>
+                                Ді-джеї, ведучі та аніматори із досвідом, натхненням, драйвом.
+                                Піньяти з цукерками та конфетті.
+                            </li>
+                            <li>Прикраса зони відпочинку та ефектні фотозони.</li>
+                            <li>Солодкий candy bar, святкове меню.</li>
+                            <li>Можливість закрити комплекс під ваше свято!</li>
+                            <li>
+                                Суперсервіс із турботою про кожну секунду найкращого дня в році.
+                            </li>
+                        </ul>
+
+                        <p>Іменинник буде щасливий, а його гості у захваті. Гарантуємо!</p>
+                    </div>
+                    <div>
+                        <p>
+                            Дитячі дні народження у Києві
+                            Як зробити день народження дитини незабутньою? Для агентства з організації дитячих свят у
+                            Києві
+                            1 Legion мрії та бажання іменинника — це закон! Тож ми всі продумали за вас.
+                        </p>
+                        <p>
+                            Лазертаг із
+                            супергероєм, <a href="javascript: void(0)">лазерні бої</a>, квест Амонґ ас, паперове шоу,
+                            піньята з цукерками та конфетті —
+                            підберемо розваги на ваш смак та запропонуємо готові ексклюзивні програми на будь-який
+                            бюджет.
+                        </p>
+                        <p>
+                            Ви зможете відзначити день народження дитини у Києві з персональним привітанням
+                            супергероя, кенді-баром, ді-джеєм та іншими цікавостями.
+                        </p>
+
+                        <p>
+                            У центрі дитячих розваг «Перший
+                            Легіон» іменинник та гості ЗАВЖДИ щасливі!
+                        </p>
+                    </div>
+                </div>
+                <button type="button" class="seo__more js-seo-more">Детальніше</button>
+            </div>
+        </section>
+        <section class="contacts">
+            <img src="./assets/images/toys_drk.png" alt="" class="contacts__bg">
+            <div class="container">
+                <div class="contacts__content">
+                    <h2 class="contacts__title content-title mobile--visible">Контакти</h2>
+                    <div class="contacts__wrapper">
+                        <div class="contacts__panel">
+                            <h2 class="contacts__title content-title mobile--hidden">Контакти</h2>
+                            <div class="slider-controls slider-controls--light">
+                                <button type="button" class="slider-controls__btn btn-prev js-contacts-prev">
+                                    <svg width="16" height="23" viewBox="0 0 16 23" fill="none"
+                                        xmlns="http://www.w3.org/2000/svg">
+                                        <path
+                                            d="M14.6379 2.81159C15.3615 2.17184 15.3615 1.0429 14.6379 0.403152C14.0299 -0.134365 13.1166 -0.134365 12.5086 0.403154L-8.58275e-07 11.4619L12.5086 22.5207C13.1166 23.0582 14.0299 23.0582 14.6379 22.5207C15.3615 21.8809 15.3615 20.752 14.6379 20.1122L6.5483 12.9603C5.64791 12.1643 5.64791 10.7596 6.5483 9.96353L14.6379 2.81159Z"
+                                            fill="#FFD100" />
+                                    </svg>
+                                </button>
+                                <div class="slider-controls__pagination js-contacts-pagination"></div>
+                                <button type="button" class="slider-controls__btn btn-next js-contacts-next">
+                                    <svg width="16" height="23" viewBox="0 0 16 23" fill="none"
+                                        xmlns="http://www.w3.org/2000/svg">
+                                        <path
+                                            d="M0.542698 20.1122C-0.180928 20.752 -0.180928 21.8809 0.542697 22.5207C1.15069 23.0582 2.06398 23.0582 2.67197 22.5207L15.1806 11.4619L2.67198 0.403152C2.06399 -0.134365 1.15069 -0.134367 0.542701 0.403151C-0.180924 1.0429 -0.180925 2.17184 0.5427 2.81159L8.6323 9.96353C9.53269 10.7596 9.53269 12.1643 8.6323 12.9603L0.542698 20.1122Z"
+                                            fill="#FFD100" />
+                                    </svg>
+                                </button>
+                            </div>
+                        </div>
+                        <div class="contacts__slider swiper js-contacts-slider">
+                            <div class="contacts__slider-wrapper swiper-wrapper">
+                                <div class="contacts__slider-slide swiper-slide">
+                                    <div class="location-box location-box--contacts">
+                                        <div class="location-box__img">
+                                            <img src="./assets/images/location_slide_1.jpg" alt="Thumbnail">
+                                        </div>
+                                        <p class="location-box__title">ТРЦ Dream Berry, Оболонь</p>
+                                        <p class="location-box__subtitle">
+                                            Київ, вул. Маршала Тимошенка, 21
+                                        </p>
+                                        <a href="tel:+3806700000`00" class="location-box__phone">
+                                            +38 067 000 00 00
+                                        </a>
+                                        <span class="location-box__time">Пн-Нд 10:00 - 21:00</span>
+                                        <a href="javascript: void(0)" class="location-box__link">
+                                            Подивитись на карті
+                                        </a>
+                                    </div>
+                                </div>
+                                <div class="contacts__slider-slide swiper-slide">
+                                    <div class="location-box location-box--contacts">
+                                        <div class="location-box__img">
+                                            <img src="./assets/images/location_slide_2.jpg" alt="Thumbnail">
+                                        </div>
+                                        <p class="location-box__title">ТЦ Олімпійський, центр</p>
+                                        <p class="location-box__subtitle">
+                                            Київ, вул. Велика Васильківська, 72
+                                        </p>
+                                        <a href="tel:+3806700000`00" class="location-box__phone">
+                                            +38 067 000 00 00
+                                        </a>
+                                        <span class="location-box__time">Пн-Нд 10:00 - 21:00</span>
+                                        <a href="javascript: void(0)" class="location-box__link">
+                                            Подивитись на карті
+                                        </a>
+                                    </div>
+                                </div>
+                                <div class="contacts__slider-slide swiper-slide">
+                                    <div class="location-box location-box--contacts">
+                                        <div class="location-box__img">
+                                            <img src="./assets/images/location_slide_2.jpg" alt="Thumbnail">
+                                        </div>
+                                        <p class="location-box__title">ТЦ Олімпійський, центр</p>
+                                        <p class="location-box__subtitle">
+                                            Київ, вул. Велика Васильківська, 72
+                                        </p>
+                                        <a href="tel:+3806700000`00" class="location-box__phone">
+                                            +38 067 000 00 00
+                                        </a>
+                                        <span class="location-box__time">Пн-Нд 10:00 - 21:00</span>
+                                        <a href="javascript: void(0)" class="location-box__link">
+                                            Подивитись на карті
+                                        </a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="decoration-chev">
+                <img src="./assets/images/icons/chevron-r-wht.svg" alt="">
+            </div>
+        </section>
+    </main>
+    <footer class="footer">
+        <div class="container">
+            <div class="footer__row">
+                <div class="footer__info">
+                    <div class="footer__logo">
+                        <img width="152" height="122" src="./assets/images/icons/logo.png" alt="Logo">
+                    </div>
+                    <p class="footer__copy">© 2025 <br> усі права захищені</p>
+                    <ul class="footer__social">
+                        <li>
+                            <a href="javascript: void(0)" target="_blank">
+                                <img width="40" height="40" src="./assets/images/icons/ico-facebook.svg" alt="Facebook">
+                            </a>
+                        </li>
+                        <li>
+                            <a href="javascript: void(0)" target="_blank">
+                                <img width="40" height="40" src="./assets/images/icons/ico-inst.svg" alt="Instagram">
+                            </a>
+                        </li>
+                        <li>
+                            <a href="javascript: void(0)" target="_blank">
+                                <img width="40" height="40" src="./assets/images/icons/ico-tube.svg" alt="YouTube">
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+                <nav class="footer__nav">
+                    <ul>
+                        <li><a href="javascript: void(0)">локації</a></li>
+                        <li><a href="javascript: void(0)">меню</a></li>
+                        <li><a href="javascript: void(0)">послуги</a></li>
+                        <li><a href="javascript: void(0)">про нас</a></li>
+                        <li><a href="javascript: void(0)">блог</a></li>
+                        <li><a href="javascript: void(0)">контакти</a></li>
+                    </ul>
+                </nav>
+            </div>
+            <div class="footer__row">
+                <form class="footer__send">
+                    <div class="footer__send-field">
+                        <label class="footer__send-title" for="footerEmail">
+                            Підпишіться на нові акції:
+                        </label>
+                        <input placeholder="Ваш email" type="email" name="footerEmail" id="footerEmail">
+                    </div>
+                    <button type="submit" class="footer__send-submit cta cta--accent">
+                        підписатися
+                    </button>
+                </form>
+                <div class="footer__contacts">
+                    <ul class="footer__phones">
+                        <li><a href="tel:+380994194111">+38 (099) 419 4111</a></li>
+                        <li><a href="tel:+380687884111">+38 (068) 788 4111</a></li>
+                    </ul>
+                    <ul class="footer__message">
+                        <li>
+                            <a href="javascript: void(0)" target="_blank">
+                                <img width="40" height="40" src="./assets/images/icons/ico-viber.svg" alt="Viber">
+                            </a>
+                        </li>
+                        <li>
+                            <a href="javascript: void(0)" target="_blank">
+                                <img width="40" height="40" src="./assets/images/icons/ico-telegram.svg" alt="Telegram">
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </footer>
+    <div class="form-modal js-form-modal">
+        <div class="form-modal__inner js-form-inner">
+            <div class="form-modal__success js-form-success">
+                <button type="button" class="form-modal__close js-success-close">
+                    <svg width="32" height="32" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <rect x="0.000488281" y="2.83105" width="4" height="40" rx="2"
+                            transform="rotate(-45 0.000488281 2.83105)" fill="#FFD100" />
+                        <rect x="2.82861" y="31.1123" width="4" height="40" rx="2"
+                            transform="rotate(-135 2.82861 31.1123)" fill="#FFD100" />
+                    </svg>
+                </button>
+                <div class="form-modal__content">
+                    <div class="form-modal__check">
+                        <img src="./assets/images/icons/ico-checl-lg.svg" alt="Check">
+                    </div>
+                    <p class="form-modal__title">Дякуємо <br> за Ваше звернення!</p>
+                    <p class="form-modal__subtitle">Наш менеджер скоро зв'яжеться з Вами.</p>
+                </div>
+            </div>
+            <div class="form-modal__box js-form-box">
+                <button type="button" class="form-modal__close js-form-close">
+                    <svg width="32" height="32" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <rect x="0.000488281" y="2.83105" width="4" height="40" rx="2"
+                            transform="rotate(-45 0.000488281 2.83105)" fill="#FFD100" />
+                        <rect x="2.82861" y="31.1123" width="4" height="40" rx="2"
+                            transform="rotate(-135 2.82861 31.1123)" fill="#FFD100" />
+                    </svg>
+                </button>
+                <div class="form-modal__content">
+                    <div class="form-modal__logo">
+                        <img src="./assets/images/icons/logo.png" alt="Logo">
+                    </div>
+                    <p class="form-modal__title">Залиште номер</p>
+                    <p class="form-modal__subtitle">і ми Вам зателефонуємо</p>
+                    <form class="form-modal__flow">
+                        <div class="form-modal__field">
+                            <input placeholder="Ім’я" type="text" name="modalName" id="modalName">
+                        </div>
+                        <div class="form-modal__field">
+                            <input placeholder="+38 ( _ ) ___ __ __" type="tel" name="modalPhone" id="modalPhone"
+                                class="js-phone-field">
+                        </div>
+                        <button type="submit" class="form-modal__submit cta cta--accent">
+                            передзвоніть мені
+                        </button>
+                    </form>
+                    <div class="form-modal__tcpa">
+                        <p>
+                            Натискаючи цю кнопку, Ви надаєте згоду на обробку персональних даних та погоджуєтесь з
+                        </p>
+                        <a href="javascript: void(0)">політикою конфіденційності</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="video-modal js-video-modal" id="videoModal">
+        <div class="video-modal__inner">
+            <div class="video-modal__wrapper js-video-modal__wrapper">
+                <button class="video-modal__close js-video-modal__close">
+                    <svg width="32" height="32" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <rect x="0.000488281" y="2.83154" width="4" height="40" rx="2"
+                            transform="rotate(-45 0.000488281 2.83154)" fill="#232323" />
+                        <rect x="2.82861" y="31.1128" width="4" height="40" rx="2"
+                            transform="rotate(-135 2.82861 31.1128)" fill="#232323" />
+                    </svg>
+                </button>
+                <button class="video-modal__play js-video-modal__play">
+                    <svg width="22" height="24" viewBox="0 0 22 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path
+                            d="M3.91795 0.529181C1.75422 -0.711968 0 0.304797 0 2.79837V21.1999C0 23.6959 1.75422 24.7114 3.91795 23.4714L20.0018 14.2474C22.1663 13.0059 22.1663 10.9943 20.0018 9.753L3.91795 0.529181Z"
+                            fill="#FFD100" />
+                    </svg>
+                </button>
+                <div class="video-modal__video">
+                    <video controls playsinline id="videoPlayer"></video>
+                </div>
+            </div>
+        </div>
+    </div>
 </body>
 
 </html>

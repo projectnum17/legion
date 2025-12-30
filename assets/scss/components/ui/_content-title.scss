@@ -18,4 +18,8 @@
     @include media('desktop-lg') {
         font-size: rem(64);
     }
+
+    span {
+        color: var(--color-accent);
+    }
 }

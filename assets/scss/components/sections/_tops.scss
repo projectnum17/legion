@@ -1,0 +1,50 @@
+@use '../../base/media' as *;
+@use '../../base/mixins' as *;
+
+.tops {
+    position: relative;
+    overflow: hidden;
+    padding-block: rem(48);
+    @include media('mobile-lg') {
+        padding-block: rem(56);
+    }
+    @include media('tablet') {
+        padding-block: rem(48);
+    }
+    @include media('desktop') {
+        padding-block: rem(72);
+    }
+    @include media('desktop-lg') {
+        padding-block: rem(80);
+    }
+    .container {
+        position: relative;
+        z-index: 2;
+    }
+
+    .decoration-chev {
+        max-width: rem(396);
+        width: 100%;
+        pointer-events: none;
+        position: absolute;
+
+        &.frst-el {
+            right: rem(-60);
+            top: rem(50);
+            @include media('tablet') {
+                right: 50%;
+                transform: translateX(40%);
+            }
+
+            @include media('laptop') {
+                right: auto;
+                transform: translateX(0);
+                left: rem(100);
+            }
+
+            @include media('desktop-lg') {
+                left: rem(200);
+            }
+        }
+    }
+}

@@ -5,8 +5,6 @@ document.addEventListener('DOMContentLoaded', () => {
 
     if (!faqBoxes.length) return;
 
-    faqBoxes[0].classList.add('is-active');
-
     faqBoxes.forEach((box) => {
         box.addEventListener('click', () => {
             const isActive = box.classList.contains('is-active');

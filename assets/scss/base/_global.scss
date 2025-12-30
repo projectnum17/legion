@@ -217,3 +217,11 @@ section.packages:has(+ section.birthdays) {
         padding-bottom: rem(460);
     }
 }
+
+.section--yellow {
+    background: var(--color-accent);
+
+    .content-title {
+        color: var(--color-drk);
+    }
+}
