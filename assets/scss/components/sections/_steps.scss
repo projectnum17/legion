@@ -1,0 +1,31 @@
+@use '../../base/media' as *;
+@use '../../base/mixins' as *;
+
+.steps {
+    overflow: hidden;
+    padding-block: rem(64);
+
+    @include media('laptop') {
+        padding-block: rem(72);
+    }
+
+    @include media('desktop') {
+        padding-block: rem(88) rem(125);
+    }
+
+    @include media('desktop-lg') {
+        padding-block: rem(116) rem(96);
+    }
+
+    .additional-block {
+        .container {
+            position: relative;
+            z-index: 3;
+        }
+
+        @include media('desktop-lg') {
+            max-width: rem(1464);
+            margin: 0 auto;
+        }
+    }
+}

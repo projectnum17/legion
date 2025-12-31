@@ -1,0 +1,123 @@
+@use '../../base/media' as *;
+@use '../../base/mixins' as *;
+
+.sertificate {
+    min-height: 100vh;
+    min-height: 100svh;
+    overflow: hidden;
+    display: grid;
+    position: relative;
+    color: var(--color-wht);
+
+    @include media('tablet') {
+        min-height: auto;
+    }
+
+    &::after {
+        content: '';
+        width: 100%;
+        height: 100%;
+        inset: 0;
+        background: linear-gradient(
+            270deg,
+            rgba(0, 0, 0, 0) 0%,
+            rgba(0, 0, 0, 0.8) 87.83%
+        );
+        position: absolute;
+    }
+
+    .container {
+        position: relative;
+        z-index: 2;
+        height: 100%;
+    }
+
+    &__subtitle {
+        font: 700 #{rem(20)} / 120% var(--ff-base);
+        color: var(--color-accent);
+        @include media('laptop') {
+            font-size: rem(24);
+        }
+    }
+
+    &__text {
+        font: 400 #{rem(16)} / 140% var(--ff-base);
+        @include media('mobile-lg') {
+            font-weight: 700;
+        }
+    }
+
+    &__content {
+        height: 100%;
+        padding-block: rem(56) rem(40);
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        gap: rem(20);
+
+        @include media('mobile-lg') {
+            align-items: center;
+        }
+
+        @include media('tablet') {
+            padding-block: rem(64);
+            max-width: rem(330);
+            margin-left: auto;
+            align-items: flex-start;
+        }
+
+        @include media('laptop') {
+            padding-block: rem(72) rem(84);
+            max-width: 50%;
+        }
+
+        @include media('desktop') {
+            padding-block: rem(102) rem(126);
+        }
+
+        @include media('desktop-lg') {
+            padding-block: rem(141) rem(161);
+        }
+
+        .col {
+            &:first-child {
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+                text-align: center;
+                gap: rem(16);
+
+                @include media('tablet') {
+                    align-items: flex-start;
+                    text-align: left;
+                }
+            }
+        }
+
+        ul {
+            padding: 0;
+            margin: 0;
+            font: 400 #{rem(16)} / 140% var(--ff-base);
+            @include media('mobile-lg') {
+                font-weight: 700;
+            }
+
+            li {
+                list-style-type: none;
+            }
+        }
+    }
+
+    &__bg {
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+
+        img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+    }
+}

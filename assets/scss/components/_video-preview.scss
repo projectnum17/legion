@@ -96,6 +96,7 @@
     }
 
     &__bg {
+        pointer-events: none;
         display: none;
         @include media('tablet') {
             display: block;
@@ -103,6 +104,98 @@
             width: 100%;
             top: calc(0px - var(--section-pdd));
             object-fit: cover;
+        }
+    }
+
+    &__note {
+        font: 700 #{rem(16)} / 140% var(--ff-base);
+
+        color: var(--color-accent);
+    }
+
+    &--compact {
+        margin-bottom: 0;
+
+        .video-preview__head {
+            max-width: max-content;
+            display: flex;
+            flex-direction: column;
+            gap: rem(8);
+            margin-bottom: rem(24);
+
+            @include media('mobile-lg') {
+                position: relative;
+                margin-bottom: rem(48);
+            }
+        }
+        .video-preview__title {
+            margin-bottom: 0;
+        }
+
+        .video-preview__info {
+            @include media('desktop') {
+                max-width: rem(513);
+                width: 100%;
+            }
+        }
+
+        .video-preview__content {
+            @include media('desktop') {
+                justify-content: space-between;
+            }
+        }
+
+        .video-preview__video {
+            @include media('desktop-lg') {
+                max-width: rem(784);
+                width: 100%;
+            }
+        }
+
+        .video-preview__note {
+            @include media('mobile-lg') {
+                position: absolute;
+                right: rem(25);
+                bottom: 0;
+                max-width: rem(220);
+                transform: translateY(40%);
+            }
+
+            @include media('laptop') {
+                right: 0;
+                transform: translate(-50%, 40%);
+            }
+
+            @include media('desktop') {
+                right: 80px;
+                transform: translate(-50%, 10%);
+            }
+
+            @include media('desktop-lg') {
+                right: rem(200);
+            }
+        }
+
+        .video-preview__link {
+            @include media('tablet') {
+                max-width: rem(328);
+            }
+        }
+
+        .decoration-chev {
+            display: none;
+            opacity: 0.7;
+            @include media('laptop') {
+                display: block;
+                position: absolute;
+                bottom: 0;
+                right: rem(50);
+            }
+
+            @include media('desktop') {
+                bottom: auto;
+                top: rem(-150);
+            }
         }
     }
 }

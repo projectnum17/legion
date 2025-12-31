@@ -176,6 +176,59 @@ section.information + section {
         }
     }
 }
+section.information + section.information {
+    padding-block: var(--section-pdd);
+
+    .decoration-wrapper {
+        position: absolute;
+        z-index: -1;
+        left: 61px;
+        transform: translateY(-20%);
+        top: 0;
+        pointer-events: none;
+        @include media('mobile-lg') {
+            left: 25px;
+        }
+
+        @include media('tablet') {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            justify-content: space-between;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 100%;
+            gap: 40px;
+            top: 30px;
+            opacity: 0.8;
+        }
+        @include media('laptop') {
+            top: 50%;
+            transform: translate(-50%, -100%);
+            max-width: 88%;
+        }
+
+        @include media('desktop') {
+            max-width: 80%;
+        }
+    }
+
+    .decoration-chev {
+        max-width: rem(198);
+
+        @include media('mobile-lg') {
+            max-width: rem(396);
+            width: 100%;
+        }
+
+        &.scnd-el {
+            display: none;
+            @include media('tablet') {
+                display: block;
+            }
+        }
+    }
+}
 
 section:has(+ .inclusive) {
     @include media('tablet') {
@@ -223,5 +276,16 @@ section.packages:has(+ section.birthdays) {
 
     .content-title {
         color: var(--color-drk);
+    }
+    .slider-controls__btn {
+        border: 1px solid var(--color-drk);
+        color: var(--color-drk);
+        background: var(--color-wht);
+    }
+
+    .slider-controls__pagination {
+        .swiper-pagination-current {
+            color: var(--color-drk);
+        }
     }
 }

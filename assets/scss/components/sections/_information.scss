@@ -93,4 +93,32 @@
             }
         }
     }
+    &--reviews-only {
+        padding-top: rem(64);
+
+        @include media('tablet') {
+            padding-top: 0;
+        }
+        .gallery-content__title {
+            margin-bottom: 0;
+        }
+
+        .decoration-chev {
+            &.scnd-el,
+            &.thrd-el {
+                display: none;
+            }
+        }
+
+        .reviews-panel {
+            justify-content: space-between;
+            align-items: center;
+        }
+    }
+    &--gallery-only {
+        // padding-top: 0;
+        .gallery-content {
+            padding-bottom: 0;
+        }
+    }
 }
