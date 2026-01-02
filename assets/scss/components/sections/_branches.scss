@@ -1,0 +1,104 @@
+@use '../../base/media' as *;
+@use '../../base/mixins' as *;
+.branches {
+    position: relative;
+    overflow: hidden;
+
+    &::after,
+    &::before {
+        pointer-events: none;
+        content: '';
+        position: absolute;
+        border-radius: 50%;
+        height: rem(615);
+        width: rem(615);
+        background: #ffef4726;
+        filter: blur(300px);
+        position: absolute;
+    }
+
+    &::before {
+        top: 0;
+        left: 0;
+    }
+
+    &::after {
+        bottom: 0;
+        left: 0;
+    }
+
+    &__content {
+        padding-block: rem(128) rem(56);
+
+        @include media('mobile-lg') {
+            padding-block: rem(152) rem(56);
+        }
+
+        @include media('tablet') {
+            padding-block: rem(252) rem(64);
+        }
+
+        @include media('laptop') {
+            padding-block: rem(204) rem(72);
+        }
+
+        @include media('desktop') {
+            padding-block: rem(232) rem(88);
+        }
+
+        @include media('desktop-lg') {
+            padding-block: rem(232) rem(96);
+        }
+    }
+
+    &__cards {
+        display: grid;
+        grid-template-columns: repeat(1, 1fr);
+        gap: rem(40);
+        @include media('tablet') {
+            gap: rem(48);
+        }
+
+        @include media('desktop') {
+            gap: rem(56);
+        }
+
+        @include media('desktop-lg') {
+            grid-template-columns: repeat(2, 1fr);
+            gap: rem(96) rem(32);
+        }
+    }
+
+    &__filters {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        gap: rem(16);
+        margin-bottom: rem(40);
+
+        @include media('tablet') {
+            grid-template-columns: repeat(3, 1fr);
+            margin-bottom: rem(48);
+        }
+
+        @include media('desktop') {
+            margin-bottom: rem(56);
+        }
+
+        @include media('desktop-lg') {
+            max-width: rem(1192);
+            margin: 0 auto rem(104);
+        }
+    }
+
+    &__filter {
+        @include media('tablet') {
+            padding-inline: rem(15);
+        }
+        &:last-child {
+            grid-column: span 2;
+            @include media('tablet') {
+                grid-column: span 1;
+            }
+        }
+    }
+}
