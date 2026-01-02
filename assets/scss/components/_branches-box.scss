@@ -81,7 +81,7 @@
         }
 
         @include media('desktop') {
-            max-width: rem(696);
+            max-width: 60%;
         }
 
         @include media('desktop-lg') {
