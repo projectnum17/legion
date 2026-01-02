@@ -111,7 +111,7 @@ section.information + section.feedback {
     }
 }
 
-section.information + section {
+section.information + section:not(.benefits) {
     padding-block: rem(280) var(--section-pdd);
 
     @include media('mobile-lg') {
@@ -176,7 +176,7 @@ section.information + section {
         }
     }
 }
-section.information + section.information {
+section.information + section.information:not(.benefits) {
     padding-block: var(--section-pdd);
 
     .decoration-wrapper {
@@ -228,6 +228,10 @@ section.information + section.information {
             }
         }
     }
+}
+
+section.information.section--additional + section {
+    padding-block: var(--section-pdd);
 }
 
 section:has(+ .inclusive) {

@@ -1,0 +1,291 @@
+@use '../../base/media' as *;
+@use '../../base/mixins' as *;
+
+.benefits {
+    position: relative;
+    overflow: hidden;
+    color: var(--color-wht);
+
+    &::after {
+        display: none;
+        top: -70%;
+        left: -30%;
+        position: absolute;
+        content: '';
+        width: rem(1024);
+        border-radius: 50%;
+        filter: blur(300px);
+        background: #ffef4726;
+        height: rem(1024);
+        @include media('desktop-lg') {
+            display: block;
+        }
+    }
+
+    .container {
+        position: relative;
+        z-index: 2;
+    }
+
+    &__title {
+        color: var(--color-wht);
+    }
+
+    &__subtitle {
+        font: 700 #{rem(16)} / 140% var(--ff-base);
+        color: var(--color-accent);
+
+        @include media('desktop') {
+            max-width: rem(240);
+        }
+    }
+
+    &__text {
+        font: 400 #{rem(16)} / 140% var(--ff-base);
+        @include media('laptop') {
+            max-width: rem(376);
+        }
+    }
+
+    &__items {
+        padding-top: rem(24);
+        margin-bottom: rem(32);
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        gap: rem(16);
+
+        @include media('tablet') {
+            padding-top: 0;
+            margin-bottom: 0;
+        }
+
+        @include media('desktop') {
+            gap: rem(64);
+        }
+
+        @include media('desktop-lg') {
+            gap: rem(131);
+        }
+
+        li {
+            display: flex;
+            flex-direction: column;
+            gap: rem(8);
+            text-align: center;
+            align-items: center;
+
+            @include media('tablet') {
+                gap: rem(15);
+            }
+
+            img {
+                width: rem(104);
+                height: rem(104);
+
+                @include media('mobile-lg') {
+                    width: rem(120);
+                    height: rem(120);
+                }
+
+                @include media('desktop') {
+                    width: rem(144);
+                    height: rem(144);
+                }
+            }
+
+            p {
+                font: 700 #{rem(16)} / 140% var(--ff-base);
+            }
+        }
+    }
+
+    &__about {
+        font: 700 #{rem(16)} / 140% var(--ff-base);
+        margin-bottom: rem(32);
+        max-width: rem(327);
+
+        @include media('tablet') {
+            margin-bottom: 0;
+        }
+    }
+
+    &__link {
+        width: 100%;
+    }
+
+    &__thumbs {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        gap: rem(24) rem(16);
+
+        @include media('tablet') {
+            grid-template-columns: repeat(4, 1fr);
+            gap: rem(24);
+        }
+
+        li {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            text-align: center;
+            gap: rem(8);
+
+            @include media('desktop') {
+                gap: rem(16);
+            }
+
+            @include media('desktop-lg') {
+                gap: rem(24);
+            }
+
+            img {
+                border-radius: rem(8);
+                overflow: hidden;
+                height: rem(136);
+                object-fit: cover;
+
+                @include media('mobile-lg') {
+                    border-radius: rem(16);
+                }
+
+                @include media('tablet') {
+                    height: rem(152);
+                }
+
+                @include media('laptop') {
+                    height: rem(136);
+                }
+
+                @include media('desktop') {
+                    height: rem(176);
+                }
+
+                @include media('desktop-lg') {
+                    height: rem(240);
+                }
+            }
+
+            p {
+                font: 700 #{rem(16)} / 140% var(--ff-base);
+                color: var(--color-accent);
+            }
+        }
+    }
+
+    &__description {
+        display: flex;
+        flex-direction: column;
+        gap: rem(16);
+
+        @include media('tablet') {
+            max-width: rem(320);
+        }
+
+        @include media('laptop') {
+            max-width: 100%;
+            gap: rem(24);
+        }
+
+        .row:first-child {
+            display: flex;
+            flex-direction: column;
+            gap: rem(16);
+
+            @include media('laptop') {
+                flex-direction: row;
+                align-items: flex-end;
+            }
+        }
+    }
+
+    &__row {
+        &:first-child {
+            @include media('tablet') {
+                display: flex;
+                align-items: flex-start;
+                margin-bottom: rem(32);
+                gap: rem(32);
+                justify-content: space-between;
+            }
+
+            @include media('desktop') {
+                margin-bottom: rem(40);
+            }
+        }
+        &:last-child {
+            display: flex;
+            flex-direction: column-reverse;
+            gap: rem(24);
+
+            @include media('laptop') {
+                flex-direction: row;
+                align-items: flex-start;
+                gap: rem(32);
+            }
+
+            @include media('desktop') {
+                align-items: center;
+            }
+
+            .col:last-child {
+                @include media('laptop') {
+                    width: 100%;
+                }
+            }
+
+            .col:first-child {
+                @include media('tablet') {
+                    display: flex;
+                    gap: rem(25);
+                    justify-content: space-between;
+                    align-items: center;
+                }
+
+                @include media('laptop') {
+                    flex-direction: column;
+                    align-items: flex-start;
+                    gap: rem(29);
+                    max-width: rem(376);
+                    width: 100%;
+                }
+            }
+        }
+    }
+
+    .decoration-chev {
+        opacity: 0.4;
+        max-width: rem(274);
+        position: absolute;
+        &.frst-el {
+            top: rem(17);
+            right: rem(16);
+
+            @include media('tablet') {
+                top: rem(70);
+                right: auto;
+                left: rem(160);
+            }
+
+            @include media('desktop') {
+                top: rem(103);
+                left: 50%;
+            }
+        }
+
+        &.scnd-el {
+            bottom: rem(188);
+            right: rem(-16);
+
+            @include media('tablet') {
+                bottom: rem(22);
+                right: auto;
+                left: rem(100);
+            }
+
+            @include media('desktop') {
+                bottom: rem(176);
+                left: 25%;
+            }
+        }
+    }
+}

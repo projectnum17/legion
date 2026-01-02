@@ -148,7 +148,6 @@
         color: var(--color-wht);
 
         @include media('mobile-lg') {
-            font-size: rem(36);
             margin-bottom: rem(32);
         }
 
@@ -246,6 +245,19 @@
             @include media('desktop-lg') {
                 right: auto;
                 left: 400px;
+            }
+        }
+    }
+
+    &--additional {
+        &::after,
+        &::before {
+            display: none;
+        }
+
+        .stock__wrapper {
+            @include media('desktop-lg') {
+                flex-direction: row;
             }
         }
     }
