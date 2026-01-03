@@ -1,0 +1,40 @@
+@use '../../base/media' as *;
+@use '../../base/mixins' as *;
+
+.other {
+    padding-block: var(--section-pdd);
+    &__title {
+        text-align: center;
+        margin-bottom: rem(24);
+        color: var(--color-wht);
+
+        @include media('mobile-lg') {
+            margin-bottom: rem(40);
+        }
+
+        @include media('tablet') {
+            margin-bottom: rem(48);
+        }
+
+        @include media('desktop-lg') {
+            margin-bottom: rem(56);
+        }
+    }
+
+    .slider-controls {
+        margin: 0 auto;
+        margin-top: rem(24);
+
+        @include media('mobile-lg') {
+            margin-top: rem(40);
+        }
+
+        @include media('tablet') {
+            margin-top: rem(48);
+        }
+
+        @include media('desktop-lg') {
+            margin-top: rem(56);
+        }
+    }
+}

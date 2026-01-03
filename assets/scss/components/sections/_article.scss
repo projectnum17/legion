@@ -1,0 +1,129 @@
+@use '../../base/media' as *;
+@use '../../base/mixins' as *;
+
+.article {
+    padding-block: var(--section-pdd) 0;
+    position: relative;
+    overflow: hidden;
+    color: var(--color-wht);
+
+    &::after,
+    &::before {
+        display: none;
+        pointer-events: none;
+        content: '';
+        position: absolute;
+        border-radius: 50%;
+        height: rem(349);
+        width: rem(349);
+        transform: translateZ(0);
+        background: #ffef4726;
+        filter: blur(300px);
+        position: absolute;
+
+        @include media('tablet') {
+            display: block;
+            height: rem(730);
+            width: rem(730);
+        }
+    }
+
+    &::before {
+        top: 0;
+        left: 0;
+    }
+
+    &::after {
+        bottom: rem(500);
+        right: 0;
+    }
+
+    &__content {
+        max-width: rem(1100);
+        margin: 0 auto;
+        font: 400 #{rem(16)} / 140% var(--ff-base);
+    }
+
+    &__bg {
+        display: none;
+        @include media('tablet') {
+            z-index: -1;
+            display: block;
+            position: absolute;
+            width: 100%;
+            top: 0;
+            left: 0;
+        }
+    }
+
+    .videos-box {
+        margin-bottom: rem(24);
+
+        @include media('laptop') {
+            height: rem(450);
+        }
+        img {
+            margin-bottom: 0 !important;
+            max-height: initial !important;
+        }
+    }
+
+    h2,
+    h3,
+    h4,
+    h5,
+    h6 {
+        margin: 0;
+        font: 700 #{rem(16)} / 140% var(--ff-base);
+        margin-bottom: rem(16);
+        color: var(--color-accent);
+    }
+
+    p:where(:not([class]):not(:last-child)) {
+        margin-bottom: rem(16);
+    }
+
+    ul,
+    ol {
+        display: flex;
+        flex-direction: column;
+        gap: rem(12);
+        padding: 0;
+        margin: 0;
+        padding-left: rem(12);
+        margin-bottom: rem(16);
+
+        li {
+            list-style-type: none;
+            display: inline-flex;
+            gap: rem(6);
+            align-items: flex-start;
+            &::before {
+                margin-top: rem(8);
+                content: '';
+                width: rem(4);
+                height: rem(4);
+                display: inline-flex;
+                flex-shrink: 0;
+                border-radius: 50%;
+                background: var(--color-wht);
+            }
+        }
+    }
+
+    img:not([class]) {
+        margin-bottom: rem(16);
+        object-fit: cover;
+        max-height: rem(204);
+
+        @include media('mobile-lg') {
+            max-height: rem(312);
+        }
+        @include media('tablet') {
+            max-height: rem(312);
+        }
+        @include media('laptop') {
+            max-height: rem(491);
+        }
+    }
+}
