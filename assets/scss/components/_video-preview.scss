@@ -14,6 +14,7 @@
         border-radius: 50%;
         height: rem(476);
         width: rem(476);
+        transform: translateZ(0);
         background: #ffef4726;
         filter: blur(300px);
         @include media('mobile-lg') {

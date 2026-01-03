@@ -100,11 +100,12 @@
         &::before {
             bottom: 0;
             left: rem(-200);
+            transform: translateZ(0);
         }
 
         &::after {
             right: rem(97);
-            transform: translate(-50%, -50%);
+            transform: translate(-50%, -50%) translateZ(0);
         }
 
         .action-block__arrow {

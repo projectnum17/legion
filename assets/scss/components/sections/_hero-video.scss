@@ -12,6 +12,7 @@
         position: absolute;
         border-radius: 50%;
         filter: blur(300px);
+        transform: translateZ(0);
         display: none;
         background: #ffef4726;
         @include media('mobile-lg') {

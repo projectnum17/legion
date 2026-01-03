@@ -54,7 +54,7 @@
     &::before {
         bottom: 263px;
         right: 0;
-        transform: translate(30%, -30%);
+        transform: translate(30%, -30%) translateZ(0);
 
         @include media('desktop') {
             bottom: 0;
@@ -64,7 +64,7 @@
     &::after {
         top: 0;
         left: 0;
-        transform: translate(-30%, -30%);
+        transform: translate(-30%, -30%) translateZ(0);
     }
 
     &__bg {
