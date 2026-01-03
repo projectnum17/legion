@@ -1,0 +1,174 @@
+@use '../../base/media' as *;
+@use '../../base/mixins' as *;
+
+.blog {
+    position: relative;
+    overflow: hidden;
+
+    &::after,
+    &::before {
+        pointer-events: none;
+        content: '';
+        position: absolute;
+        border-radius: 50%;
+        height: rem(349);
+        width: rem(349);
+        transform: translateZ(0);
+        background: #ffef4726;
+        filter: blur(300px);
+        position: absolute;
+
+        @include media('tablet') {
+            height: rem(730);
+            width: rem(730);
+        }
+    }
+
+    &::before {
+        top: 0;
+        left: 0;
+    }
+
+    &::after {
+        bottom: 0;
+        left: 0;
+    }
+
+    &__content {
+        padding-block: rem(128) rem(56);
+
+        @include media('mobile-lg') {
+            padding-block: rem(152) rem(56);
+        }
+
+        @include media('tablet') {
+            padding-block: rem(252) rem(64);
+        }
+
+        @include media('laptop') {
+            padding-block: rem(204) rem(72);
+        }
+
+        @include media('desktop') {
+            padding-block: rem(232) rem(88);
+        }
+
+        @include media('desktop-lg') {
+            padding-block: rem(232) rem(96);
+        }
+    }
+
+    &__title {
+        font: 800 #{rem(26)} / 100% var(--ff-base);
+        text-transform: uppercase;
+        margin-bottom: rem(24);
+        color: var(--color-wht);
+        text-shadow: 5px 5px 4px rgba(0, 0, 0, 0.6);
+
+        @include media('mobile-lg') {
+            font-size: rem(40);
+        }
+
+        @include media('laptop') {
+            font-size: rem(48);
+            margin-left: rem(100);
+        }
+
+        @include media('desktop') {
+            font-size: rem(56);
+        }
+
+        @include media('desktop-lg') {
+            font-size: rem(72);
+        }
+
+        span {
+            color: var(--color-accent);
+        }
+    }
+    &__slider {
+        margin-bottom: rem(24);
+    }
+
+    &__slide {
+        display: grid;
+        grid-template-columns: repeat(1, 1fr);
+        gap: rem(16);
+        @include media('mobile-lg') {
+            grid-template-columns: repeat(2, 1fr);
+        }
+
+        @include media('laptop') {
+            grid-template-columns: repeat(3, 1fr);
+            gap: rem(24);
+        }
+    }
+
+    .slider-controls {
+        @include media('tablet') {
+            margin: 0 auto;
+        }
+    }
+
+    .decoration-chev {
+        position: absolute;
+        max-width: rem(197);
+        z-index: -1;
+
+        @include media('mobile-lg') {
+            max-width: rem(296);
+        }
+
+        @include media('desktop') {
+            max-width: rem(396);
+        }
+
+        &.frst-el {
+            top: rem(120);
+            left: rem(16);
+
+            @include media('tablet') {
+                top: rem(200);
+            }
+
+            @include media('desktop') {
+                left: rem(100);
+            }
+
+            @include media('desktop-lg') {
+                left: rem(250);
+            }
+        }
+        &.scnd-el {
+            top: rem(460);
+            left: rem(100);
+
+            @include media('tablet') {
+                top: rem(250);
+                left: auto;
+                right: rem(50);
+            }
+
+            @include media('desktop') {
+                right: rem(250);
+            }
+
+            @include media('desktop-lg') {
+                right: (250);
+            }
+        }
+        &.thrd-el {
+            bottom: rem(200);
+            left: rem(16);
+
+            @include media('tablet') {
+                left: rem(150);
+            }
+
+            @include media('desktop-lg') {
+                left: 30%;
+                transform: translateX(-50%);
+            }
+        }
+    }
+}
