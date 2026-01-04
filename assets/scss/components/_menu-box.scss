@@ -1,0 +1,94 @@
+@use '../base/media' as *;
+@use '../base/mixins' as *;
+
+.menu-box {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    border-radius: rem(16);
+    padding: rem(15);
+    position: relative;
+    overflow: hidden;
+    background: var(--color-drk);
+    color: var(--color-wht);
+    box-shadow: 10px 10px 20px 0px #00000033;
+
+    @include media('tablet') {
+        padding: rem(23);
+    }
+
+    &::before {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        padding: 1px;
+        border-radius: rem(16);
+        background: linear-gradient(
+            90deg,
+            rgba(255, 209, 0, 0.5) 0%,
+            rgba(255, 209, 0, 0.15) 100%
+        );
+        -webkit-mask: linear-gradient(#fff 0 0) content-box,
+            linear-gradient(#fff 0 0);
+        -webkit-mask-composite: xor;
+
+        mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+        mask-composite: exclude;
+        pointer-events: none;
+    }
+
+    &__info {
+        &:first-child {
+            display: flex;
+            flex-direction: column;
+            flex: 1;
+        }
+    }
+
+    &__img {
+        border-radius: rem(13);
+        overflow: hidden;
+        margin-bottom: rem(24);
+    }
+
+    &__title {
+        flex: 1;
+        font: 700 #{rem(12)} / 140% var(--ff-base);
+        text-align: center;
+        padding-block: rem(9);
+        margin-bottom: rem(16);
+        color: var(--color-accent);
+        @include media('tablet') {
+            font-size: rem(16);
+        }
+    }
+
+    &__descr {
+        display: flex;
+        flex-direction: column;
+        justify-content: flex-end;
+        flex: 1;
+        font: 400 #{rem(16)} / 140% var(--ff-base);
+        margin-bottom: rem(16);
+    }
+
+    &__price {
+        font: 700 #{rem(16)} / 140% var(--ff-base);
+        display: flex;
+        text-align: center;
+        justify-content: center;
+        margin-bottom: rem(24);
+        color: var(--color-accent);
+    }
+
+    &__order {
+        padding-block: rem(18);
+        width: 100%;
+        @include media('tablet') {
+            padding-block: rem(22);
+        }
+    }
+}

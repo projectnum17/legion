@@ -1,0 +1,37 @@
+@use '../../base/media' as *;
+@use '../../base/mixins' as *;
+
+.bag {
+    bottom: rem(26);
+    right: rem(26);
+    position: fixed;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: rem(96);
+    height: rem(96);
+    border-radius: 50%;
+    border: 3px solid var(--color-accent);
+    background: var(--color-violet);
+
+    img {
+        width: rem(48);
+        height: rem(48);
+    }
+
+    &__val {
+        font: 700 #{rem(24)} / 120% var(--ff-base);
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        transform: translate(35%, 35%);
+        flex-shrink: 0;
+        width: rem(49);
+        height: rem(49);
+        position: absolute;
+        bottom: 0;
+        right: 0;
+        border-radius: 50%;
+        background: var(--color-accent);
+    }
+}

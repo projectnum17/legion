@@ -3,6 +3,7 @@
 @use 'modal-form';
 @use 'modal-review';
 @use 'modal-video';
+@use 'modal-bag';
 @use 'mobile-menu';
 @use 'slider-controls';
 @use 'location-box';
@@ -10,11 +11,12 @@
 @use 'reviews-box';
 @use 'videos-box';
 @use 'gallery-box';
+@use 'price-box';
+@use 'branches-box';
+@use 'blog-box';
+@use 'menu-box';
 @use 'shwprograms-box';
 @use 'pack-card';
 @use 'video-preview';
 @use 'ways';
-@use 'price-box';
-@use 'branches-box';
-@use 'blog-box';
 @use 'company-description';
