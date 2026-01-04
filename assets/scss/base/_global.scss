@@ -111,7 +111,7 @@ section.information + section.feedback {
     }
 }
 
-section.information + section:not(.benefits) {
+section.information + section:not(.benefits):not(.contacts) {
     padding-block: rem(280) var(--section-pdd);
 
     @include media('mobile-lg') {

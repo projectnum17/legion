@@ -94,13 +94,14 @@
         }
     }
     &--reviews-only {
-        padding-top: rem(64);
+        padding-block: var(--section-pdd);
 
         @include media('tablet') {
-            padding-top: 0;
+            padding-block: 0 var(--section-pdd);
         }
-        .gallery-content__title {
-            margin-bottom: 0;
+
+        .information__reviews {
+            padding-top: 0;
         }
 
         .decoration-chev {
@@ -113,10 +114,14 @@
         .reviews-panel {
             justify-content: space-between;
             align-items: center;
+            gap: rem(16);
+            @include media('tablet') {
+                padding-top: var(--container-padding);
+            }
         }
     }
+
     &--gallery-only {
-        // padding-top: 0;
         .gallery-content {
             padding-bottom: 0;
         }

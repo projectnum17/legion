@@ -81,6 +81,10 @@
 
     p:where(:not([class]):not(:last-child)) {
         margin-bottom: rem(16);
+
+        @include media('laptop') {
+            margin-bottom: rem(24);
+        }
     }
 
     ul,
