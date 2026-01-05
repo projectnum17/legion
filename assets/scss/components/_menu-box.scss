@@ -16,6 +16,13 @@
     @include media('tablet') {
         padding: rem(23);
     }
+    @include media('laptop') {
+        padding: rem(18);
+    }
+
+    @include media('desktop') {
+        padding: rem(23);
+    }
 
     &::before {
         content: '';
@@ -52,6 +59,26 @@
         border-radius: rem(13);
         overflow: hidden;
         margin-bottom: rem(24);
+        @include media('laptop') {
+            margin-bottom: rem(14);
+        }
+
+        @include media('desktop') {
+            margin-bottom: rem(24);
+        }
+
+        img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        @include media('laptop') {
+            // height: rem(248);
+        }
+        @include media('desktop-lg') {
+            height: auto;
+        }
     }
 
     &__title {
@@ -73,6 +100,14 @@
         flex: 1;
         font: 400 #{rem(16)} / 140% var(--ff-base);
         margin-bottom: rem(16);
+
+        @include media('laptop') {
+            margin-bottom: rem(14);
+        }
+
+        @include media('desktop') {
+            margin-bottom: rem(16);
+        }
     }
 
     &__price {
@@ -82,12 +117,28 @@
         justify-content: center;
         margin-bottom: rem(24);
         color: var(--color-accent);
+
+        @include media('laptop') {
+            margin-bottom: rem(14);
+        }
+
+        @include media('desktop') {
+            margin-bottom: rem(24);
+        }
     }
 
     &__order {
         padding-block: rem(18);
         width: 100%;
         @include media('tablet') {
+            padding-block: rem(22);
+        }
+
+        @include media('laptop') {
+            padding-block: rem(16);
+        }
+
+        @include media('desktop') {
             padding-block: rem(22);
         }
     }

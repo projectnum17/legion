@@ -51,6 +51,11 @@
             --ico-height: #{rem(120)};
         }
         @include media('laptop') {
+            --ico-width: #{rem(120)};
+            --ico-height: #{rem(120)};
+            --ico-top: #{rem(16)};
+        }
+        @include media('desktop') {
             --ico-width: #{rem(144)};
             --ico-height: #{rem(144)};
             --ico-top: #{rem(16)};
@@ -91,6 +96,12 @@
             @include media('tablet') {
                 min-height: rem(152);
             }
+            @include media('laptop') {
+                min-height: rem(125);
+            }
+            @include media('desktop') {
+                min-height: rem(152);
+            }
         }
 
         .pack-card__head::after {
@@ -107,6 +118,9 @@
             font-size: rem(24);
             margin-bottom: 0;
             @include media('laptop') {
+                font-size: rem(26);
+            }
+            @include media('desktop') {
                 font-size: rem(32);
             }
         }
@@ -123,6 +137,11 @@
 
             @include media('tablet') {
                 padding-top: rem(31);
+            }
+
+            @include media('laptop') {
+                max-height: 250px;
+                overflow: auto;
             }
         }
 
@@ -342,6 +361,16 @@
             gap: rem(16);
         }
 
+        @include media('laptop') {
+            margin-bottom: rem(40);
+        }
+        @include media('desktop') {
+            margin-bottom: rem(60);
+        }
+        @include media('desktop-lg') {
+            margin-bottom: rem(135);
+        }
+
         li {
             font: 400 #{rem(16)} / 140% var(--ff-base);
             display: inline-flex;
@@ -455,7 +484,8 @@
         }
 
         @include media('laptop') {
-            height: rem(696);
+            height: rem(450);
+            height: auto;
 
             img {
                 height: 100%;
@@ -465,6 +495,7 @@
 
         @include media('desktop') {
             min-width: rem(488);
+            height: rem(696);
         }
 
         img {

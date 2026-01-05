@@ -103,7 +103,7 @@
         }
 
         @include media('laptop') {
-            font-size: rem(134);
+            font-size: rem(96);
         }
 
         @include media('desktop') {
@@ -133,10 +133,14 @@
             }
 
             @include media('laptop') {
+                width: rem(300);
+                height: rem(240);
                 transform: translateY(-25%);
             }
 
             @include media('desktop') {
+                width: rem(334);
+                height: rem(279);
                 transform: translateY(-45%);
             }
 
@@ -163,7 +167,7 @@
 
         @include media('laptop') {
             max-width: 100%;
-            margin-bottom: rem(66);
+            margin-bottom: rem(32);
         }
 
         @include media('desktop-lg') {
@@ -188,7 +192,7 @@
 
         @include media('laptop') {
             grid-template-columns: repeat(2, 1fr);
-            margin-bottom: rem(87);
+            margin-bottom: rem(30);
         }
 
         @include media('desktop-lg') {
@@ -224,7 +228,8 @@
         }
 
         @include media('laptop') {
-            margin-bottom: rem(40);
+            margin-bottom: rem(24);
+            font-size: rem(24);
         }
 
         @include media('desktop-lg') {

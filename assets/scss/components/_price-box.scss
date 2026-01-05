@@ -16,6 +16,14 @@
         border-radius: rem(32);
     }
 
+    @include media('desktop') {
+        padding: rem(16);
+    }
+
+    @include media('desktop-lg') {
+        padding: rem(24);
+    }
+
     &--popular {
         position: relative;
 
@@ -37,8 +45,10 @@
     }
 
     .row {
-        @include media('laptop') {
-            margin-top: auto;
+        &:last-child {
+            @include media('laptop') {
+                margin-top: auto;
+            }
         }
     }
 
@@ -46,6 +56,21 @@
         border-radius: rem(13);
         overflow: hidden;
         margin-bottom: rem(24);
+
+        img {
+            height: 100%;
+            object-fit: cover;
+        }
+
+        @include media('laptop') {
+            height: rem(230);
+            margin-bottom: rem(12);
+        }
+
+        @include media('desktop-lg') {
+            height: auto;
+            margin-bottom: rem(24);
+        }
     }
 
     &__name {
@@ -56,6 +81,15 @@
         color: var(--color-accent);
 
         @include media('laptop') {
+            // font-size: rem(32);
+            font-size: rem(24);
+        }
+
+        // @include media('desktop') {
+        //     font-size: rem(24);
+        // }
+
+        @include media('desktop-lg') {
             font-size: rem(32);
         }
     }
@@ -73,6 +107,14 @@
             justify-content: space-between;
             align-items: flex-start;
         }
+
+        @include media('laptop') {
+            justify-content: space-around;
+        }
+
+        @include media('desktop-lg') {
+            justify-content: space-between;
+        }
     }
 
     &__time {
@@ -84,6 +126,15 @@
             grid-column: span 1;
         }
         @include media('laptop') {
+            // font-size: rem(24);
+            font-size: rem(20);
+        }
+
+        // @include media('desktop') {
+        //     font-size: rem(20);
+        // }
+
+        @include media('desktop-lg') {
             font-size: rem(24);
         }
     }
@@ -93,6 +144,14 @@
         flex-direction: column;
         align-items: center;
         gap: rem(8);
+
+        @include media('laptop') {
+            gap: rem(4);
+        }
+
+        @include media('desktop-lg') {
+            gap: rem(8);
+        }
 
         &.old-price {
             span:first-child {
@@ -109,12 +168,28 @@
             &:first-child {
                 font: 700 #{rem(20)} / 120% var(--ff-base);
                 @include media('laptop') {
+                    // font-size: rem(24);
+                    font-size: rem(20);
+                }
+
+                // @include media('desktop') {
+                //     font-size: rem(20);
+                // }
+
+                @include media('desktop-lg') {
                     font-size: rem(24);
                 }
             }
 
             &:last-child {
                 font: 400 #{rem(16)} / 140% var(--ff-base);
+                @include media('laptop') {
+                    font-size: rem(14);
+                }
+
+                @include media('desktop-lg') {
+                    font-size: rem(16);
+                }
             }
         }
     }
@@ -122,17 +197,45 @@
     &__descr {
         font: 400 #{rem(16)} / 140% var(--ff-base);
         margin-bottom: rem(16);
+
+        @include media('laptop') {
+            font-size: rem(14);
+            margin-bottom: rem(14);
+        }
+
+        @include media('desktop-lg') {
+            font-size: rem(16);
+            margin-bottom: rem(16);
+        }
     }
 
     &__text {
         font: 400 #{rem(16)} / 140% var(--ff-base);
         margin-bottom: rem(16);
+        @include media('laptop') {
+            font-size: rem(14);
+            margin-bottom: rem(14);
+        }
+        @include media('desktop-lg') {
+            font-size: rem(16);
+            margin-bottom: rem(16);
+        }
     }
 
     &__accent {
         font: 700 #{rem(16)} / 140% var(--ff-base);
         margin-bottom: rem(16);
         color: var(--color-accent);
+
+        @include media('laptop') {
+            font-size: rem(14);
+            margin-bottom: rem(14);
+        }
+
+        @include media('desktop-lg') {
+            font-size: rem(16);
+            margin-bottom: rem(16);
+        }
 
         span {
             text-decoration: line-through;
@@ -142,5 +245,11 @@
 
     &__link {
         width: 100%;
+        @include media('laptop') {
+            padding-block: rem(16);
+        }
+        @include media('desktop-lg') {
+            padding: rem(22);
+        }
     }
 }
