@@ -1,10 +1,20 @@
 @use '../../base/media' as *;
 @use '../../base/mixins' as *;
 
+body {
+    @include media('laptop') {
+        &:has(.header.is-transform) {
+            .article__sidebar {
+                top: rem(20);
+                height: 93vh;
+            }
+        }
+    }
+}
+
 .article {
     padding-block: var(--section-pdd) 0;
     position: relative;
-    overflow: hidden;
     color: var(--color-wht);
 
     &::after,
@@ -38,10 +48,189 @@
         right: 0;
     }
 
+    .container {
+        display: flex;
+        flex-direction: column;
+        gap: rem(20);
+
+        @include media('laptop') {
+            flex-direction: row;
+            align-items: flex-start;
+            justify-content: space-between;
+        }
+    }
+
     &__content {
-        max-width: rem(1100);
-        margin: 0 auto;
+        max-width: rem(1056);
         font: 400 #{rem(16)} / 140% var(--ff-base);
+    }
+
+    &__sidebar {
+        overflow: auto;
+        width: 100%;
+        padding: rem(16);
+        border-radius: rem(16);
+        background: #1c1c1c99;
+        backdrop-filter: blur(10px);
+        border: 1px solid var(--color-accent);
+        @include transitions(0.5s, cubic-bezier(0.768, 0.304, 0.496, 0.884));
+        @include media('laptop') {
+            height: 80vh;
+            padding: rem(32);
+            max-width: rem(512);
+            position: sticky;
+            top: rem(140);
+        }
+
+        @include media('desktop-lg') {
+            padding: rem(63) rem(47);
+            top: rem(160);
+        }
+
+        &-title {
+            font: 700 #{rem(16)} / 120% var(--ff-base);
+            margin-bottom: rem(12);
+            color: var(--color-accent);
+
+            @include media('laptop') {
+                font-size: rem(24);
+                margin-bottom: rem(24);
+            }
+        }
+
+        &-posts {
+            padding-left: rem(20);
+            display: flex;
+            flex-direction: column;
+            gap: rem(12);
+            margin-bottom: rem(24);
+
+            @include media('laptop') {
+                gap: rem(16);
+                margin-bottom: rem(40);
+            }
+
+            li {
+                font: 700 #{rem(14)} / 140% var(--ff-base);
+                list-style-type: initial;
+                @include media('laptop') {
+                    font-size: rem(16);
+                }
+            }
+
+            a {
+                @include transitions(
+                    0.3s,
+                    cubic-bezier(0.768, 0.304, 0.496, 0.884)
+                );
+                @include hover {
+                    color: var(--hover-accent);
+                }
+            }
+        }
+
+        &-tags {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: rem(12);
+            margin-bottom: rem(24);
+            @include media('laptop') {
+                margin-bottom: rem(40);
+                gap: rem(16);
+            }
+
+            @include media('desktop') {
+                grid-template-columns: repeat(3, 1fr);
+            }
+
+            li {
+                display: inline-flex;
+                font: 700 #{rem(14)} / 140% var(--ff-base);
+                @include media('laptop') {
+                    font-size: rem(16);
+                }
+            }
+
+            a {
+                width: 100%;
+                display: inline-flex;
+                align-items: center;
+                justify-content: center;
+                padding: rem(8) rem(30);
+                border-radius: rem(8);
+                font: inherit;
+                border: 1px solid var(--color-wht);
+                @include transitions(
+                    0.3s,
+                    cubic-bezier(0.768, 0.304, 0.496, 0.884)
+                );
+                @include hover {
+                    border-color: var(--color-accent);
+                    color: var(--color-accent);
+                }
+            }
+        }
+
+        &-previews {
+            display: flex;
+            flex-direction: column;
+            flex-direction: column;
+            gap: rem(16);
+
+            li {
+                a {
+                    display: flex;
+                    align-items: center;
+                    gap: rem(8);
+                    @include hover {
+                        .title {
+                            color: var(--color-accent);
+                        }
+                    }
+
+                    .col {
+                        &:first-child {
+                            display: flex;
+                            flex-shrink: 0;
+                            border-radius: rem(8);
+                            width: rem(108);
+                            height: rem(70);
+                            overflow: hidden;
+
+                            img {
+                                width: 100%;
+                                height: 100%;
+                            }
+                        }
+                    }
+                }
+            }
+
+            .title {
+                font: 700 #{rem(14)} / 140% var(--ff-base);
+                margin-bottom: rem(2);
+                color: var(--color-accent);
+                @include transitions(
+                    0.3s,
+                    cubic-bezier(0.768, 0.304, 0.496, 0.884)
+                );
+                @include media('laptop') {
+                    font-size: rem(16);
+                }
+            }
+
+            .text {
+                font: 400 #{rem(14)} / 140% var(--ff-base);
+                display: -webkit-box;
+                -webkit-box-orient: vertical;
+                -webkit-line-clamp: 2;
+                overflow: hidden;
+                text-overflow: ellipsis;
+                @include media('laptop') {
+                    font-size: rem(16);
+                }
+            }
+        }
     }
 
     &__bg {
@@ -68,11 +257,11 @@
         }
     }
 
-    h2,
-    h3,
-    h4,
-    h5,
-    h6 {
+    h2:not([class]),
+    h3:not([class]),
+    h4:not([class]),
+    h5:not([class]),
+    h6:not([class]) {
         margin: 0;
         font: 700 #{rem(16)} / 140% var(--ff-base);
         margin-bottom: rem(16);
@@ -87,8 +276,8 @@
         }
     }
 
-    ul,
-    ol {
+    ul:not([class]),
+    ol:not([class]) {
         display: flex;
         flex-direction: column;
         gap: rem(12);

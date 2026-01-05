@@ -10,9 +10,11 @@ const headerHandler = () => {
         const currentScroll = window.scrollY;
 
         if (currentScroll > lastScroll && currentScroll > 100) {
-            header.style.transform = 'translateY(-100%)';
+            // header.style.transform = 'translateY(-100%)';
+            header.classList.add('is-transform')
         } else {
-            header.style.transform = 'translateY(0)';
+            // header.style.transform = 'translateY(0)';
+            header.classList.remove('is-transform')
         }
 
         lastScroll = currentScroll;

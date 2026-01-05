@@ -23,6 +23,10 @@
         padding-block: rem(24);
     }
 
+    &.is-transform {
+        transform: translateY(-100%);
+    }
+
     &.is-scroll {
         padding-block: rem(12);
     }
