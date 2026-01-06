@@ -10,6 +10,15 @@ body {
             }
         }
     }
+
+    @include media('desktop') {
+        &:has(.header.is-transform) {
+            .article__sidebar {
+                max-height: 93vh;
+                height: auto;
+            }
+        }
+    }
 }
 
 .article {
@@ -80,6 +89,11 @@ body {
             max-width: rem(512);
             position: sticky;
             top: rem(140);
+        }
+
+        @include media('desktop') {
+            max-height: 80vh;
+            height: auto;
         }
 
         @include media('desktop-lg') {
