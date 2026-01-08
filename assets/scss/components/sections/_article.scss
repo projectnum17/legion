@@ -14,8 +14,16 @@ body {
     @include media('desktop') {
         &:has(.header.is-transform) {
             .article__sidebar {
-                max-height: 93vh;
-                height: auto;
+                // max-height: 93vh;
+                // height: auto;
+            }
+        }
+    }
+
+    @include media('desktop') {
+        &:not(:has(.header.is-transform)) {
+            .wrapper {
+                // height: 80vh;
             }
         }
     }
@@ -75,30 +83,77 @@ body {
     }
 
     &__sidebar {
-        overflow: auto;
+        // overflow: auto;
+        overflow: scroll;
+        // overflow: hidden;
         width: 100%;
         padding: rem(16);
         border-radius: rem(16);
         background: #1c1c1c99;
         backdrop-filter: blur(10px);
         border: 1px solid var(--color-accent);
+        /* Firefox */
+        scrollbar-width: none;
+
+        /* IE / Edge (legacy) */
+        -ms-overflow-style: none;
+
+        /* Chrome / Safari */
+        &::-webkit-scrollbar {
+            display: none;
+        }
+
         @include transitions(0.5s, cubic-bezier(0.768, 0.304, 0.496, 0.884));
         @include media('laptop') {
             height: 80vh;
-            padding: rem(32);
+            padding: rem(32) rem(16) rem(32) rem(32);
             max-width: rem(512);
             position: sticky;
             top: rem(140);
+
+            .wrapper {
+                padding-right: rem(16);
+            }
         }
 
         @include media('desktop') {
-            max-height: 80vh;
-            height: auto;
+            // max-height: 80vh;
+            // height: auto;
         }
 
         @include media('desktop-lg') {
             padding: rem(63) rem(47);
             top: rem(160);
+        }
+
+        .wrapper {
+            overflow: auto;
+            height: 80vh;
+            @include media('desktop') {
+                // max-height: 80vh;
+                // height: auto;
+            }
+            &::-webkit-scrollbar {
+                width: 2px; // сделает тоньше
+            }
+
+            /* фон трека */
+            &::-webkit-scrollbar-track {
+                background: transparent; // или rgba(255,255,255,0.05)
+                border-radius: 10px;
+            }
+
+            /* сам ползунок */
+            &::-webkit-scrollbar-thumb {
+                background-color: var(--color-accent);
+                border-radius: 10px;
+                transition: background-color 0.3s;
+            }
+
+            /* hover по ползунку */
+            &::-webkit-scrollbar-thumb:hover {
+                background-color: lighten(#85c32f, 10%);
+            }
         }
 
         &-title {
